@@ -7,5 +7,8 @@ namespace QuickModel3D.Model
 {
     public class RelativeFilter : Filter
     {
+        public RelativeFilter(int id) : base(id) 
+        {
+        }
     }
 }

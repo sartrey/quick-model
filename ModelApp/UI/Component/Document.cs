@@ -1,25 +1,16 @@
 ﻿using Sartrey;
-using Sartrey.UI;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace QuickModel3D.UI
 {
-    public class Panel : DockContent, IWindow
+    public class Document : DockContent, IWindow
     {
         private string _Id;
-        private DockState _DefaultDock
-            = DockState.DockLeft;
 
         public string Id
         {
             get { return _Id; }
-        }
-
-        public DockState DefaultDock
-        {
-            get { return _DefaultDock; }
-            set { _DefaultDock = value; }
         }
 
         public Control View
@@ -40,26 +31,21 @@ namespace QuickModel3D.UI
             }
         }
 
-        public Panel(string id)
+        public Document(string id)
         {
             AutoScaleMode = AutoScaleMode.Font;
             _Id = id;
         }
 
-        public Panel(string id, Control view, string title, DockState dock) : this(id)
+        public Document(string id, Control view, string title) : this(id)
         {
             View = view;
             Text = title;
-            DefaultDock = dock;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (e.CloseReason != CloseReason.ApplicationExitCall)
-            {
-                e.Cancel = true;
-                Hide();
-            }
+            View.Dispose();
             base.OnFormClosing(e);
         }
 
@@ -67,7 +53,7 @@ namespace QuickModel3D.UI
         {
             var runtime = Runtime.Instance;
             var window = runtime.WindowHub["main"] as MainWindow;
-            Show(window.Docking, DefaultDock);
+            Show(window.Docking, DockState.Document);
         }
     }
 }

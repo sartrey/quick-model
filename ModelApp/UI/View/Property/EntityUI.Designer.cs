@@ -31,14 +31,20 @@
             this.Grp1 = new System.Windows.Forms.GroupBox();
             this.TbxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblId = new System.Windows.Forms.Label();
             this.Grp2 = new System.Windows.Forms.GroupBox();
-            this.PicTexture = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.CobxGeometry = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.Grp3 = new System.Windows.Forms.GroupBox();
+            this.BtnClean = new System.Windows.Forms.Button();
+            this.BtnDraw = new System.Windows.Forms.Button();
+            this.BtnImport = new System.Windows.Forms.Button();
+            this.PicTexture = new System.Windows.Forms.PictureBox();
+            this.BtnOK = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.Grp1.SuspendLayout();
             this.Grp2.SuspendLayout();
+            this.Grp3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicTexture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,18 +52,17 @@
             // 
             this.Grp1.Controls.Add(this.TbxName);
             this.Grp1.Controls.Add(this.label2);
-            this.Grp1.Controls.Add(this.label1);
-            this.Grp1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Grp1.Location = new System.Drawing.Point(8, 8);
+            this.Grp1.Controls.Add(this.LblId);
+            this.Grp1.Location = new System.Drawing.Point(15, 15);
             this.Grp1.Name = "Grp1";
-            this.Grp1.Size = new System.Drawing.Size(285, 92);
+            this.Grp1.Size = new System.Drawing.Size(290, 90);
             this.Grp1.TabIndex = 7;
             this.Grp1.TabStop = false;
             this.Grp1.Text = "基本信息";
             // 
             // TbxName
             // 
-            this.TbxName.Location = new System.Drawing.Point(55, 54);
+            this.TbxName.Location = new System.Drawing.Point(55, 52);
             this.TbxName.Name = "TbxName";
             this.TbxName.Size = new System.Drawing.Size(219, 21);
             this.TbxName.TabIndex = 5;
@@ -65,53 +70,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 57);
+            this.label2.Location = new System.Drawing.Point(20, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "名称";
             // 
-            // label1
+            // LblId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "标识：";
+            this.LblId.AutoSize = true;
+            this.LblId.Location = new System.Drawing.Point(20, 30);
+            this.LblId.Name = "LblId";
+            this.LblId.Size = new System.Drawing.Size(41, 12);
+            this.LblId.TabIndex = 3;
+            this.LblId.Text = "标识：";
             // 
             // Grp2
             // 
-            this.Grp2.Controls.Add(this.PicTexture);
-            this.Grp2.Controls.Add(this.label4);
             this.Grp2.Controls.Add(this.CobxGeometry);
             this.Grp2.Controls.Add(this.label3);
-            this.Grp2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grp2.Location = new System.Drawing.Point(8, 100);
+            this.Grp2.Location = new System.Drawing.Point(15, 115);
             this.Grp2.Name = "Grp2";
-            this.Grp2.Size = new System.Drawing.Size(285, 285);
+            this.Grp2.Size = new System.Drawing.Size(290, 64);
             this.Grp2.TabIndex = 8;
             this.Grp2.TabStop = false;
             this.Grp2.Text = "几何模型";
-            // 
-            // PicTexture
-            // 
-            this.PicTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicTexture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PicTexture.Location = new System.Drawing.Point(67, 62);
-            this.PicTexture.Name = "PicTexture";
-            this.PicTexture.Size = new System.Drawing.Size(207, 91);
-            this.PicTexture.TabIndex = 10;
-            this.PicTexture.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "贴图";
             // 
             // CobxGeometry
             // 
@@ -130,19 +113,94 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "几何体";
             // 
+            // Grp3
+            // 
+            this.Grp3.Controls.Add(this.BtnClean);
+            this.Grp3.Controls.Add(this.BtnDraw);
+            this.Grp3.Controls.Add(this.BtnImport);
+            this.Grp3.Controls.Add(this.PicTexture);
+            this.Grp3.Location = new System.Drawing.Point(15, 190);
+            this.Grp3.Name = "Grp3";
+            this.Grp3.Size = new System.Drawing.Size(290, 160);
+            this.Grp3.TabIndex = 9;
+            this.Grp3.TabStop = false;
+            this.Grp3.Text = "贴图";
+            // 
+            // BtnClean
+            // 
+            this.BtnClean.Location = new System.Drawing.Point(174, 113);
+            this.BtnClean.Name = "BtnClean";
+            this.BtnClean.Size = new System.Drawing.Size(100, 27);
+            this.BtnClean.TabIndex = 18;
+            this.BtnClean.Text = "清除";
+            this.BtnClean.UseVisualStyleBackColor = true;
+            // 
+            // BtnDraw
+            // 
+            this.BtnDraw.Location = new System.Drawing.Point(174, 63);
+            this.BtnDraw.Name = "BtnDraw";
+            this.BtnDraw.Size = new System.Drawing.Size(100, 27);
+            this.BtnDraw.TabIndex = 17;
+            this.BtnDraw.Text = "绘制";
+            this.BtnDraw.UseVisualStyleBackColor = true;
+            this.BtnDraw.Click += new System.EventHandler(this.BtnDraw_Click);
+            // 
+            // BtnImport
+            // 
+            this.BtnImport.Location = new System.Drawing.Point(174, 30);
+            this.BtnImport.Name = "BtnImport";
+            this.BtnImport.Size = new System.Drawing.Size(100, 27);
+            this.BtnImport.TabIndex = 16;
+            this.BtnImport.Text = "导入...";
+            this.BtnImport.UseVisualStyleBackColor = true;
+            // 
+            // PicTexture
+            // 
+            this.PicTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicTexture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PicTexture.Location = new System.Drawing.Point(22, 30);
+            this.PicTexture.Name = "PicTexture";
+            this.PicTexture.Size = new System.Drawing.Size(110, 110);
+            this.PicTexture.TabIndex = 15;
+            this.PicTexture.TabStop = false;
+            // 
+            // BtnOK
+            // 
+            this.BtnOK.Location = new System.Drawing.Point(139, 359);
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.Size = new System.Drawing.Size(80, 30);
+            this.BtnOK.TabIndex = 10;
+            this.BtnOK.Text = "确认";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Location = new System.Drawing.Point(225, 359);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(80, 30);
+            this.BtnCancel.TabIndex = 11;
+            this.BtnCancel.Text = "取消";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
             // EntityUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnOK);
+            this.Controls.Add(this.Grp3);
             this.Controls.Add(this.Grp2);
             this.Controls.Add(this.Grp1);
             this.Name = "EntityUI";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(301, 393);
+            this.Size = new System.Drawing.Size(320, 400);
             this.Grp1.ResumeLayout(false);
             this.Grp1.PerformLayout();
             this.Grp2.ResumeLayout(false);
             this.Grp2.PerformLayout();
+            this.Grp3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicTexture)).EndInit();
             this.ResumeLayout(false);
 
@@ -153,11 +211,16 @@
         private System.Windows.Forms.GroupBox Grp1;
         private System.Windows.Forms.TextBox TbxName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblId;
         private System.Windows.Forms.GroupBox Grp2;
-        private System.Windows.Forms.PictureBox PicTexture;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CobxGeometry;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox Grp3;
+        private System.Windows.Forms.Button BtnClean;
+        private System.Windows.Forms.Button BtnDraw;
+        private System.Windows.Forms.Button BtnImport;
+        private System.Windows.Forms.PictureBox PicTexture;
+        private System.Windows.Forms.Button BtnOK;
+        private System.Windows.Forms.Button BtnCancel;
     }
 }

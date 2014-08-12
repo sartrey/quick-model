@@ -35,6 +35,7 @@ namespace QuickModel3D.UI
         public Dialog()
         {
             AutoScaleMode = AutoScaleMode.Font;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         public Dialog(DialogUI view, string title) : this()

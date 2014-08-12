@@ -11,7 +11,7 @@ namespace QuickModel3D.UI
             var runtime = Runtime.Instance;
             var entities = runtime.Project.Entities;
             var entity = new Entity(entities.NewId);
-            entities.LinkEntity(entity);
+            entities.AddEntity(entity);
         }
 
         private void MnuEntity_AddBatch_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace QuickModel3D.UI
             for (int i = 0; i < total; i++)
             {
                 var entity = new Entity(entities.NewId);
-                entities.LinkEntity(entity);
+                entities.AddEntity(entity);
             }
             dlg.Dispose();
         }
@@ -36,14 +36,25 @@ namespace QuickModel3D.UI
         private void MnuEntity_Delete_Click(object sender, EventArgs e)
         {
             var runtime = Runtime.Instance;
-            var assets = runtime.GetViewById("assets") as AssetsUI;
-            TreeNode node = null;// assets.CurrentNode;
-            if (node != null)
-            {
-                var entities = runtime.Project.Entities;
-                var entity = entities[(int)node.Tag];
-                entities.KickEntity(entity);
-            }
+            var entities = runtime.Project.Entities;
+            var entity = entities.CurrentEntity;
+            if (entity != null)
+                entities.RemoveEntity(entity);
+        }
+        private void MnuEntity_Property_Click(object sender, EventArgs e)
+        {
+            var property = new EntityUI();
+            var runtime = Runtime.Instance;
+            var entities = runtime.Project.Entities;
+            var entity = entities.CurrentEntity;
+            property.Model = entity;
+
+            var dlg = new Dialog(property, "模块属性");
+            dlg.Show();
+
+            if (dlg.ValidDialogResult(false))
+                return;
+            entities.UpdateEntity(entity);
         }
     }
 }

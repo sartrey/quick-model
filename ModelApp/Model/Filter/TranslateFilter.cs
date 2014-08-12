@@ -7,5 +7,8 @@ namespace QuickModel3D.Model
 {
     public class TranslateFilter : Filter
     {
+        public TranslateFilter(int id) : base(id) 
+        {
+        }
     }
 }

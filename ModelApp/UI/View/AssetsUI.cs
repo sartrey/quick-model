@@ -85,7 +85,10 @@ namespace QuickModel3D.UI
         public void AddEntity(Entity entity)
         {
             var node = new TreeNode();
-            node.Text = "功能模块" + entity.Id.ToString();
+            node.Text = 
+                string.IsNullOrWhiteSpace(entity.Name) ? 
+                "（功能模块" + entity.Id.ToString() + "）" : 
+                entity.Name;
             node.Tag = entity.Id;
             EntityNode.Nodes.Add(node);
             UpdateStat();
@@ -98,18 +101,36 @@ namespace QuickModel3D.UI
             UpdateStat();
         }
 
+        public void UpdateEntity(Entity entity) 
+        {
+            var node = GetNodeById(entity.Id);
+            node.Text = 
+                string.IsNullOrWhiteSpace(entity.Name) ?
+                "（功能模块" + entity.Id.ToString() + "）" :
+                entity.Name;
+        }
+
         private void TrvAssets_AfterSelect(object sender, TreeViewEventArgs e)
         {
             var node = TrvAssets.SelectedNode;
             if (node != null)
             {
-                if (node.Level != 2 || 
-                    (string)node.Parent.Tag != "entity")
+                if (node.Level != 2)
                     return;
                 var runtime = Runtime.Instance;
-                var entities = runtime.Project.Entities;
-                var entity = entities[(int)node.Tag];
-                entities.CurrentEntity = entity;
+                var type = (string)node.Parent.Tag;
+                if (type == "entity")
+                {
+                    var entities = runtime.Project.Entities;
+                    var entity = entities[(int)node.Tag];
+                    entities.CurrentEntity = entity;
+                }
+                else if (type== "filter")
+                {
+                    var filters = runtime.Project.Filters;
+                    var filter = filters[(int)node.Tag];
+                    filters.CurrentFilter = filter;
+                }
             }
         }
     }

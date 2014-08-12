@@ -1,4 +1,5 @@
-﻿using Sartrey.UI;
+﻿using Sartrey;
+using Sartrey.UI;
 using System;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
@@ -26,10 +27,10 @@ namespace QuickModel3D.UI
         {
             var runtime = Runtime.Instance;
             runtime.WindowHub["assets"].Show();
-            runtime.WindowHub["property"].Show();
             runtime.WindowHub["preview"].Show();
             //runtime.WindowHub["draw"].Show();
-            WindowState = FormWindowState.Maximized;
+            Width = 800;
+            Height = 600;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

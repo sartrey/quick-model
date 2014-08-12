@@ -65,6 +65,9 @@
     <Compile Include="UI\Component\DialogUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UI\Component\Document.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Dialog\AddBatchUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,12 +104,6 @@
     <Compile Include="UI\View\Property\FilterUI.Designer.cs">
       <DependentUpon>FilterUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\Property\NullUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\View\Property\NullUI.Designer.cs">
-      <DependentUpon>NullUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Window\MainWindow.Action.Filter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,12 +138,6 @@
     <Compile Include="UI\Component\WindowHost.Designer.cs">
       <DependentUpon>WindowHost.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\PropertyUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\View\PropertyUI.Designer.cs">
-      <DependentUpon>PropertyUI.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Dialog\AddBatchUI.resx">
       <DependentUpon>AddBatchUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,9 +153,6 @@
     <EmbeddedResource Include="UI\View\Property\EntityUI.resx">
       <DependentUpon>EntityUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\View\Property\NullUI.resx">
-      <DependentUpon>NullUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Window\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,9 +167,6 @@
     </Compile>
     <EmbeddedResource Include="UI\View\PreviewUI.resx">
       <DependentUpon>PreviewUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\View\PropertyUI.resx">
-      <DependentUpon>PropertyUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

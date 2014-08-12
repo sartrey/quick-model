@@ -1,52 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
+﻿using System.Drawing;
 
 namespace QuickModel3D.Model
 {
     public class Entity 
     {
-        private int _Id;
-        private string _Name;
-        private int _X;
-        private int _Y;
-        private int _Z;
+        private int _Id = -1;
+        private string _Name = null;
+        private Image _Texture = null;
 
         public Entity(int id) 
         {
             _Id = id;
         }
 
-        [Category("基本")]
         public int Id 
         { 
             get { return _Id; } 
         }
 
-        [Category("基本")]
         public string Name 
         {
             get { return _Name; }
+            set { _Name = value; }
         }
 
-        [Category("质心")]
-        public int X 
+        public Image Texture 
         {
-            get { return _X; }
-        }
-
-        [Category("质心")]
-        public int Y 
-        {
-            get { return _Y; }
-        }
-
-        [Category("质心")]
-        public int Z 
-        {
-            get { return _Z; }
+            get { return _Texture; }
+            set 
+            {
+                if (value == _Texture)
+                    return;
+                if (_Texture != null)
+                    _Texture.Dispose();
+                _Texture = value; 
+            }
         }
     }
 }

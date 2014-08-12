@@ -11,12 +11,11 @@ namespace QuickModel3D.UI
             runtime.Project = project;
 
             var assets = runtime.GetViewById("assets") as AssetsUI;
-            var property = runtime.GetViewById("property") as PropertyUI;
 
             var entities = project.Entities;
             entities.EntityAdded += assets.AddEntity;
             entities.EntityRemoved += assets.RemoveEntity;
-            entities.EntitySelected += property.SelectEntity;
+            entities.EntityUpdated += assets.UpdateEntity;
 
             assets.UpdateProject();
         }
@@ -29,6 +28,7 @@ namespace QuickModel3D.UI
         private void MnuFile_New_Click(object sender, EventArgs e)
         {
             var dlg = new FolderBrowserDialog();
+            dlg.Description = "请选择一个目录用于创建项目。";
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
             var project = new Model.Project();
@@ -39,6 +39,7 @@ namespace QuickModel3D.UI
         private void MnuFile_Open_Click(object sender, EventArgs e)
         {
             var dlg = new FolderBrowserDialog();
+            dlg.Description = "请选择项目所在目录。";
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
             var project = new Model.Project();
