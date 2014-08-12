@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E5FD4E5-EA3C-467C-954E-DF39BCF1D6A2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuickModel3D</RootNamespace>
+    <AssemblyName>QuickModel3D</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\3rdparty\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\FilterHub.cs" />
+    <Compile Include="Model\EntityHub.cs" />
+    <Compile Include="Model\Filter.cs" />
+    <Compile Include="Model\Filter\AbsoluteFilter.cs" />
+    <Compile Include="Model\Filter\RelativeFilter.cs" />
+    <Compile Include="Model\Filter\TranslateFilter.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="UI\Component\Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Component\Canvas.Designer.cs">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Component\Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Component\DialogUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\AddBatchUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Dialog\AddBatchUI.Designer.cs">
+      <DependentUpon>AddBatchUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\ModelUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\ModelUI.Designer.cs">
+      <DependentUpon>ModelUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\AssetsUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\AssetsUI.Designer.cs">
+      <DependentUpon>AssetsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\DrawUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\DrawUI.Designer.cs">
+      <DependentUpon>DrawUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\Property\EntityUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Property\EntityUI.Designer.cs">
+      <DependentUpon>EntityUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\Property\FilterUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Property\FilterUI.Designer.cs">
+      <DependentUpon>FilterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\Property\NullUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Property\NullUI.Designer.cs">
+      <DependentUpon>NullUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.Action.Filter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.Action.Entity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.Action.File.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="API\Win32.cs" />
+    <Compile Include="UI\Component\Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\View\PreviewUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\PreviewUI.Designer.cs">
+      <DependentUpon>PreviewUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Component\WindowHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Component\WindowHost.Designer.cs">
+      <DependentUpon>WindowHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\PropertyUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\PropertyUI.Designer.cs">
+      <DependentUpon>PropertyUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Dialog\AddBatchUI.resx">
+      <DependentUpon>AddBatchUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\ModelUI.resx">
+      <DependentUpon>ModelUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\AssetsUI.resx">
+      <DependentUpon>AssetsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\DrawUI.resx">
+      <DependentUpon>DrawUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Property\EntityUI.resx">
+      <DependentUpon>EntityUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Property\NullUI.resx">
+      <DependentUpon>NullUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Window\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\View\PreviewUI.resx">
+      <DependentUpon>PreviewUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\PropertyUI.resx">
+      <DependentUpon>PropertyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Projects\sartrey\Sartrey\Sartrey.csproj">
+      <Project>{47cd54c3-3019-48f3-a812-704cafb679ce}</Project>
+      <Name>Sartrey</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\View\Property\Filter\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
