@@ -45,12 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ModelHub.cs" />
     <Compile Include="Model\FilterHub.cs" />
     <Compile Include="Model\EntityHub.cs" />
     <Compile Include="Model\Filter.cs" />
     <Compile Include="Model\Filter\AbsoluteFilter.cs" />
     <Compile Include="Model\Filter\RelativeFilter.cs" />
     <Compile Include="Model\Filter\TranslateFilter.cs" />
+    <Compile Include="Model\Layout.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Point.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Runtime.cs" />
     <Compile Include="UI\Component\Canvas.cs">
