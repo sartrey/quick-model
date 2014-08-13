@@ -52,7 +52,7 @@
     <Compile Include="Model\Filter\AbsoluteFilter.cs" />
     <Compile Include="Model\Filter\RelativeFilter.cs" />
     <Compile Include="Model\Filter\TranslateFilter.cs" />
-    <Compile Include="Model\Layout.cs" />
+    <Compile Include="Model\LayoutEngine.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Point.cs" />
     <Compile Include="Model\Project.cs" />
@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="UI\View\Property\FilterUI.Designer.cs">
       <DependentUpon>FilterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Window\MainWindow.Action.Model.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Window\MainWindow.Action.Filter.cs">
       <SubType>Form</SubType>

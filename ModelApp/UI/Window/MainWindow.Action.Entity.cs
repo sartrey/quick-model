@@ -6,12 +6,20 @@ namespace QuickModel3D.UI
 {
     public partial class MainWindow
     {
-        private void MnuEntity_Add_Click(object sender, EventArgs e)
+        private void AddEntity(int count)
         {
             var runtime = Runtime.Instance;
             var entities = runtime.Project.Entities;
-            var entity = new Entity(entities.NewId);
-            entities.AddEntity(entity);
+            for (int i = 0; i < count; i++)
+            {
+                var entity = new Entity(entities.NewId);
+                entities.AddEntity(entity);
+            }
+        }
+
+        private void MnuEntity_Add_Click(object sender, EventArgs e)
+        {
+            AddEntity(1);
         }
 
         private void MnuEntity_AddBatch_Click(object sender, EventArgs e)
@@ -22,15 +30,9 @@ namespace QuickModel3D.UI
             if (!dlg.ValidDialogResult(true))
                 return;
             var dlg_view = dlg.View as AddBatchUI;
-            var runtime = Runtime.Instance;
-            var entities = runtime.Project.Entities;
             int total = view.Total;
-            for (int i = 0; i < total; i++)
-            {
-                var entity = new Entity(entities.NewId);
-                entities.AddEntity(entity);
-            }
             dlg.Dispose();
+            AddEntity(total);
         }
 
         private void MnuEntity_Delete_Click(object sender, EventArgs e)

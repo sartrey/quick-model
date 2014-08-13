@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace QuickModel3D.Model
 {
-    public class Layout
+    public class LayoutEngine
     {
         private List<Entity> _Entities
             = new List<Entity>();
-        private Dictionary<int, Point> _Data
-            = new Dictionary<int, Point>();
-        private List<Point[]> _Layouts
-            = new List<Point[]>();
+        private List<Filter> _Filters
+            = new List<Filter>();
+        private List<Model> _Models
+            = new List<Model>();
 
         public void Output(List<Point> layout)
         {

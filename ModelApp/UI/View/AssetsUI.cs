@@ -77,9 +77,22 @@ namespace QuickModel3D.UI
             var entities = runtime.Project.Entities;
             int entity_count = entities.Count;
             TbxPreStat.Text += "共有功能模块 " + entity_count + " 个。" + Environment.NewLine;
-            long layout_count = 
-                (long)(6 * System.Math.Pow(5, entity_count - 2) * Sartrey.Math.Factorial(entity_count));
-            TbxPreStat.Text += "所有可能布局方案共有 " + layout_count + " 个。";
+            if(entity_count == 1)
+                TbxPreStat.Text += "可能的空间布局方案共有 1 个。";
+            else if (entity_count < 5)
+            {
+                long layout_count =
+                    (long)(6 * System.Math.Pow(5, entity_count - 2) * Sartrey.Math.Factorial(entity_count));
+                TbxPreStat.Text += "可能的空间布局方案共有 " + layout_count + " 个。";
+            }
+            else
+            {
+                double layout_count_log =
+                    0.778151 * (entity_count - 2) * 0.69897 +
+                    Sartrey.Math.LogFactorial(entity_count, 10);
+                long log = (long)System.Math.Floor(layout_count_log);
+                TbxPreStat.Text += "可能的空间布局方案共有约 10e" + log + " 个。";
+            }
         }
 
         public void AddEntity(Entity entity)

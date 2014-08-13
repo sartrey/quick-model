@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
-            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin2 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient4 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient8 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient9 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient5 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient10 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient11 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient12 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient6 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient13 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
-            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient14 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelSkin dockPanelSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPanelSkin();
+            WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin autoHideStripSkin1 = new WeifenLuo.WinFormsUI.Docking.AutoHideStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient1 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin dockPaneStripSkin1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripSkin();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient dockPaneStripGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient2 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient2 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient3 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new WeifenLuo.WinFormsUI.Docking.DockPaneStripToolWindowGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient4 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient5 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.DockPanelGradient dockPanelGradient3 = new WeifenLuo.WinFormsUI.Docking.DockPanelGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient6 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
+            WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             this.menubar = new System.Windows.Forms.MenuStrip();
             this.MnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuFile_New = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,18 +55,19 @@
             this.MnuEntity_AddEntity = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuEntity_AddBatch = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuEntity_DeleteEntity = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuEntity_Split1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuEntity_Property = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuFilter = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuFilter_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuFilter_DeleteFilter = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuModel = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuModel_Generate = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuModel_Layout = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuModel_Split1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuModel_Preview = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuModel_Split2 = new System.Windows.Forms.ToolStripSeparator();
             this.MnuModel_Save = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuModel_Export = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuView = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuView_Preview = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelDock = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.MnuEntity_Property = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuEntity_Split1 = new System.Windows.Forms.ToolStripSeparator();
             this.menubar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,8 +77,7 @@
             this.MnuFile,
             this.MnuEntity,
             this.MnuFilter,
-            this.MnuModel,
-            this.MnuView});
+            this.MnuModel});
             this.menubar.Location = new System.Drawing.Point(0, 0);
             this.menubar.Name = "menubar";
             this.menubar.Size = new System.Drawing.Size(624, 25);
@@ -149,23 +149,35 @@
             // MnuEntity_AddEntity
             // 
             this.MnuEntity_AddEntity.Name = "MnuEntity_AddEntity";
-            this.MnuEntity_AddEntity.Size = new System.Drawing.Size(152, 22);
+            this.MnuEntity_AddEntity.Size = new System.Drawing.Size(140, 22);
             this.MnuEntity_AddEntity.Text = "添加模块(&A)";
             this.MnuEntity_AddEntity.Click += new System.EventHandler(this.MnuEntity_Add_Click);
             // 
             // MnuEntity_AddBatch
             // 
             this.MnuEntity_AddBatch.Name = "MnuEntity_AddBatch";
-            this.MnuEntity_AddBatch.Size = new System.Drawing.Size(152, 22);
+            this.MnuEntity_AddBatch.Size = new System.Drawing.Size(140, 22);
             this.MnuEntity_AddBatch.Text = "批量添加(&B)";
             this.MnuEntity_AddBatch.Click += new System.EventHandler(this.MnuEntity_AddBatch_Click);
             // 
             // MnuEntity_DeleteEntity
             // 
             this.MnuEntity_DeleteEntity.Name = "MnuEntity_DeleteEntity";
-            this.MnuEntity_DeleteEntity.Size = new System.Drawing.Size(152, 22);
+            this.MnuEntity_DeleteEntity.Size = new System.Drawing.Size(140, 22);
             this.MnuEntity_DeleteEntity.Text = "删除模块(&R)";
             this.MnuEntity_DeleteEntity.Click += new System.EventHandler(this.MnuEntity_Delete_Click);
+            // 
+            // MnuEntity_Split1
+            // 
+            this.MnuEntity_Split1.Name = "MnuEntity_Split1";
+            this.MnuEntity_Split1.Size = new System.Drawing.Size(137, 6);
+            // 
+            // MnuEntity_Property
+            // 
+            this.MnuEntity_Property.Name = "MnuEntity_Property";
+            this.MnuEntity_Property.Size = new System.Drawing.Size(140, 22);
+            this.MnuEntity_Property.Text = "模块属性(&P)";
+            this.MnuEntity_Property.Click += new System.EventHandler(this.MnuEntity_Property_Click);
             // 
             // MnuFilter
             // 
@@ -191,18 +203,39 @@
             // MnuModel
             // 
             this.MnuModel.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuModel_Generate,
+            this.MnuModel_Layout,
+            this.MnuModel_Split1,
+            this.MnuModel_Preview,
+            this.MnuModel_Split2,
             this.MnuModel_Save,
             this.MnuModel_Export});
             this.MnuModel.Name = "MnuModel";
             this.MnuModel.Size = new System.Drawing.Size(64, 21);
             this.MnuModel.Text = "模型(&M)";
             // 
-            // MnuModel_Generate
+            // MnuModel_Layout
             // 
-            this.MnuModel_Generate.Name = "MnuModel_Generate";
-            this.MnuModel_Generate.Size = new System.Drawing.Size(151, 22);
-            this.MnuModel_Generate.Text = "计算方案(&C)...";
+            this.MnuModel_Layout.Name = "MnuModel_Layout";
+            this.MnuModel_Layout.Size = new System.Drawing.Size(151, 22);
+            this.MnuModel_Layout.Text = "计算布局(&L)...";
+            this.MnuModel_Layout.Click += new System.EventHandler(this.MnuModel_Layout_Click);
+            // 
+            // MnuModel_Split1
+            // 
+            this.MnuModel_Split1.Name = "MnuModel_Split1";
+            this.MnuModel_Split1.Size = new System.Drawing.Size(148, 6);
+            // 
+            // MnuModel_Preview
+            // 
+            this.MnuModel_Preview.Name = "MnuModel_Preview";
+            this.MnuModel_Preview.Size = new System.Drawing.Size(151, 22);
+            this.MnuModel_Preview.Text = "预览模型(&P)";
+            this.MnuModel_Preview.Click += new System.EventHandler(this.MnuModel_Preview_Click);
+            // 
+            // MnuModel_Split2
+            // 
+            this.MnuModel_Split2.Name = "MnuModel_Split2";
+            this.MnuModel_Split2.Size = new System.Drawing.Size(148, 6);
             // 
             // MnuModel_Save
             // 
@@ -216,86 +249,59 @@
             this.MnuModel_Export.Size = new System.Drawing.Size(151, 22);
             this.MnuModel_Export.Text = "导出效果图(&E)";
             // 
-            // MnuView
-            // 
-            this.MnuView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuView_Preview});
-            this.MnuView.Name = "MnuView";
-            this.MnuView.Size = new System.Drawing.Size(60, 21);
-            this.MnuView.Text = "视图(&V)";
-            // 
-            // MnuView_Preview
-            // 
-            this.MnuView_Preview.Name = "MnuView_Preview";
-            this.MnuView_Preview.Size = new System.Drawing.Size(115, 22);
-            this.MnuView_Preview.Text = "预览(&P)";
-            this.MnuView_Preview.Click += new System.EventHandler(this.MnuView_Preview_Click);
-            // 
             // PanelDock
             // 
             this.PanelDock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDock.Location = new System.Drawing.Point(0, 25);
             this.PanelDock.Name = "PanelDock";
             this.PanelDock.Size = new System.Drawing.Size(624, 436);
-            dockPanelGradient4.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient4.StartColor = System.Drawing.SystemColors.ControlLight;
-            autoHideStripSkin2.DockStripGradient = dockPanelGradient4;
-            tabGradient8.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient8.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient8.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            autoHideStripSkin2.TabGradient = tabGradient8;
-            autoHideStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            dockPanelSkin2.AutoHideStripSkin = autoHideStripSkin2;
-            tabGradient9.EndColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.StartColor = System.Drawing.SystemColors.ControlLightLight;
-            tabGradient9.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.ActiveTabGradient = tabGradient9;
-            dockPanelGradient5.EndColor = System.Drawing.SystemColors.Control;
-            dockPanelGradient5.StartColor = System.Drawing.SystemColors.Control;
-            dockPaneStripGradient2.DockStripGradient = dockPanelGradient5;
-            tabGradient10.EndColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.StartColor = System.Drawing.SystemColors.ControlLight;
-            tabGradient10.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripGradient2.InactiveTabGradient = tabGradient10;
-            dockPaneStripSkin2.DocumentGradient = dockPaneStripGradient2;
-            dockPaneStripSkin2.TextFont = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            tabGradient11.EndColor = System.Drawing.SystemColors.ActiveCaption;
-            tabGradient11.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient11.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
-            tabGradient11.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dockPaneStripToolWindowGradient2.ActiveCaptionGradient = tabGradient11;
-            tabGradient12.EndColor = System.Drawing.SystemColors.Control;
-            tabGradient12.StartColor = System.Drawing.SystemColors.Control;
-            tabGradient12.TextColor = System.Drawing.SystemColors.ControlText;
-            dockPaneStripToolWindowGradient2.ActiveTabGradient = tabGradient12;
-            dockPanelGradient6.EndColor = System.Drawing.SystemColors.ControlLight;
-            dockPanelGradient6.StartColor = System.Drawing.SystemColors.ControlLight;
-            dockPaneStripToolWindowGradient2.DockStripGradient = dockPanelGradient6;
-            tabGradient13.EndColor = System.Drawing.SystemColors.InactiveCaption;
-            tabGradient13.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            tabGradient13.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            tabGradient13.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dockPaneStripToolWindowGradient2.InactiveCaptionGradient = tabGradient13;
-            tabGradient14.EndColor = System.Drawing.Color.Transparent;
-            tabGradient14.StartColor = System.Drawing.Color.Transparent;
-            tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
-            dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
-            dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
-            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
-            this.PanelDock.Skin = dockPanelSkin2;
+            dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
+            autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
+            tabGradient1.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient1.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient1.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            autoHideStripSkin1.TabGradient = tabGradient1;
+            autoHideStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            dockPanelSkin1.AutoHideStripSkin = autoHideStripSkin1;
+            tabGradient2.EndColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.StartColor = System.Drawing.SystemColors.ControlLightLight;
+            tabGradient2.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.ActiveTabGradient = tabGradient2;
+            dockPanelGradient2.EndColor = System.Drawing.SystemColors.Control;
+            dockPanelGradient2.StartColor = System.Drawing.SystemColors.Control;
+            dockPaneStripGradient1.DockStripGradient = dockPanelGradient2;
+            tabGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            tabGradient3.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripGradient1.InactiveTabGradient = tabGradient3;
+            dockPaneStripSkin1.DocumentGradient = dockPaneStripGradient1;
+            dockPaneStripSkin1.TextFont = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            tabGradient4.EndColor = System.Drawing.SystemColors.ActiveCaption;
+            tabGradient4.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient4.StartColor = System.Drawing.SystemColors.GradientActiveCaption;
+            tabGradient4.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dockPaneStripToolWindowGradient1.ActiveCaptionGradient = tabGradient4;
+            tabGradient5.EndColor = System.Drawing.SystemColors.Control;
+            tabGradient5.StartColor = System.Drawing.SystemColors.Control;
+            tabGradient5.TextColor = System.Drawing.SystemColors.ControlText;
+            dockPaneStripToolWindowGradient1.ActiveTabGradient = tabGradient5;
+            dockPanelGradient3.EndColor = System.Drawing.SystemColors.ControlLight;
+            dockPanelGradient3.StartColor = System.Drawing.SystemColors.ControlLight;
+            dockPaneStripToolWindowGradient1.DockStripGradient = dockPanelGradient3;
+            tabGradient6.EndColor = System.Drawing.SystemColors.InactiveCaption;
+            tabGradient6.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            tabGradient6.StartColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            tabGradient6.TextColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dockPaneStripToolWindowGradient1.InactiveCaptionGradient = tabGradient6;
+            tabGradient7.EndColor = System.Drawing.Color.Transparent;
+            tabGradient7.StartColor = System.Drawing.Color.Transparent;
+            tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
+            dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
+            dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
+            this.PanelDock.Skin = dockPanelSkin1;
             this.PanelDock.TabIndex = 1;
-            // 
-            // MnuEntity_Property
-            // 
-            this.MnuEntity_Property.Name = "MnuEntity_Property";
-            this.MnuEntity_Property.Size = new System.Drawing.Size(152, 22);
-            this.MnuEntity_Property.Text = "模块属性(&P)";
-            this.MnuEntity_Property.Click += new System.EventHandler(this.MnuEntity_Property_Click);
-            // 
-            // MnuEntity_Split1
-            // 
-            this.MnuEntity_Split1.Name = "MnuEntity_Split1";
-            this.MnuEntity_Split1.Size = new System.Drawing.Size(149, 6);
             // 
             // MainWindow
             // 
@@ -321,8 +327,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menubar;
-        private System.Windows.Forms.ToolStripMenuItem MnuView;
-        private System.Windows.Forms.ToolStripMenuItem MnuView_Preview;
         private System.Windows.Forms.ToolStripMenuItem MnuEntity;
         private System.Windows.Forms.ToolStripMenuItem MnuEntity_AddEntity;
         private System.Windows.Forms.ToolStripMenuItem MnuEntity_DeleteEntity;
@@ -331,7 +335,7 @@
         private System.Windows.Forms.ToolStripMenuItem MnuModel_Save;
         private System.Windows.Forms.ToolStripMenuItem MnuModel_Export;
         private WeifenLuo.WinFormsUI.Docking.DockPanel PanelDock;
-        private System.Windows.Forms.ToolStripMenuItem MnuModel_Generate;
+        private System.Windows.Forms.ToolStripMenuItem MnuModel_Layout;
         private System.Windows.Forms.ToolStripMenuItem MnuFile;
         private System.Windows.Forms.ToolStripMenuItem MnuFile_New;
         private System.Windows.Forms.ToolStripMenuItem MnuFile_Open;
@@ -344,6 +348,9 @@
         private System.Windows.Forms.ToolStripMenuItem MnuFilter_DeleteFilter;
         private System.Windows.Forms.ToolStripSeparator MnuEntity_Split1;
         private System.Windows.Forms.ToolStripMenuItem MnuEntity_Property;
+        private System.Windows.Forms.ToolStripSeparator MnuModel_Split1;
+        private System.Windows.Forms.ToolStripMenuItem MnuModel_Preview;
+        private System.Windows.Forms.ToolStripSeparator MnuModel_Split2;
     }
 }
 

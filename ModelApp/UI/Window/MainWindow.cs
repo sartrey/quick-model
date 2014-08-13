@@ -1,6 +1,4 @@
 ﻿using Sartrey;
-using Sartrey.UI;
-using System;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -41,13 +39,6 @@ namespace QuickModel3D.UI
                 Application.Exit();
             }
             base.OnFormClosing(e);
-        }
-
-        private void MnuView_Preview_Click(object sender, EventArgs e)
-        {
-            var runtime = Runtime.Instance;
-            var window = runtime.GetViewById("preview") as PreviewUI;
-            window.Preview();
         }
     }
 }
