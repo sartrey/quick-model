@@ -8,14 +8,18 @@ namespace QuickModel3D.UI
     {
         private void MnuModel_Layout_Click(object sender, EventArgs e)
         {
-
+            var runtime = Runtime.Instance;
+            var window = runtime.WindowHub["layout"];
+            window.Show();
         }
 
         private void MnuModel_Preview_Click(object sender, EventArgs e)
         {
             var runtime = Runtime.Instance;
-            var window = runtime.GetViewById("preview") as PreviewUI;
-            window.Preview();
+            var window = runtime.WindowHub["preview"];
+            window.Show();
+            var preview = (window as Panel).View as PreviewUI;
+            preview.Preview();
         }
     }
 }

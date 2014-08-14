@@ -4,15 +4,23 @@ using System.Xml.Linq;
 
 namespace QuickModel3D.Model
 {
-    public class LayoutEngine
+    public class Engine
     {
         private Project _Project
             = null;
+
+        private event Action _ModelCreated;
 
         public Project Project
         {
             get { return _Project; }
             set { _Project = value; }
+        }
+
+        public event Action ModelCreated 
+        {
+            add { _ModelCreated += value; }
+            remove { _ModelCreated -= value; }
         }
 
         public void Output(List<Point> layout)
@@ -25,27 +33,23 @@ namespace QuickModel3D.Model
             Console.WriteLine("----------");
         }
 
-        public void Generate(int count)
+        public void Generate()
         {
+            int count = _Project.Entities.Count;
             var stack = new Stack<Point>();
             var layout = new List<Point>();
             var point = new Point(0, 0, 0);
             stack.Push(point);
             layout.Add(point);
-            if (count == 1)
-            {
-                Output(layout);
-                return;
-            }
-            int layout_count = 0;
             while (true)
             {
                 if (layout.Count == count)
                 {
-                    layout_count++;
                     Output(layout);
                     layout.Remove(point);
                     stack.Pop();
+                    if (stack.Count == 0)
+                        break;
                     point = stack.Peek();
                     point.NextStep();
                 }
@@ -68,7 +72,6 @@ namespace QuickModel3D.Model
                     }
                 }
             }
-            Console.WriteLine("layout count: " + layout_count.ToString());
         }
     }
 }

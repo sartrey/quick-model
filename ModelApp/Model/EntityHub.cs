@@ -11,6 +11,8 @@ namespace QuickModel3D.Model
             = new List<Entity>();
         private Entity _CurrentEntity
             = null;
+        private Entity[] _EntityArray
+            = null;
 
         private event Action<Entity> _EntityAdded;
         private event Action<Entity> _EntityRemoved;
@@ -51,6 +53,16 @@ namespace QuickModel3D.Model
         {
             get { return _CurrentEntity; }
             set { _CurrentEntity = value; }
+        }
+
+        public Entity[] EntityArray 
+        {
+            get
+            {
+                if (_EntityArray == null)
+                    _EntityArray = _Entities.ToArray();
+                return _EntityArray;
+            }
         }
 
         public event Action<Entity> EntityAdded 

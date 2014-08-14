@@ -29,10 +29,10 @@ namespace QuickModel3D.Model
             get { return _Locations; }
         }
 
-        public Model(int space) 
+        public Model(Entity[] entities) 
         {
-            _Entities = new Entity[space];
-            _Locations = new Point[space];
+            _Entities = entities;
+            _Locations = new Point[entities.Length];
         }
     }
 }

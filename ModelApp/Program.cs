@@ -20,6 +20,7 @@ namespace QuickModel3D
             runtime.WindowHub.LinkWindow(new MainWindow());
             runtime.WindowHub.LinkWindow(new UI.Panel("assets", new AssetsUI(), "资源", DockState.DockLeft));
             runtime.WindowHub.LinkWindow(new UI.Panel("preview", new PreviewUI(), "预览", DockState.Document));
+            runtime.WindowHub.LinkWindow(new UI.Panel("layout", new LayoutUI(), "布局", DockState.Document));
             runtime.WindowHub["main"].Show();
             
             Application.Run();
