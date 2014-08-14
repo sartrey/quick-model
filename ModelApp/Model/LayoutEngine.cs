@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace QuickModel3D.Model
 {
     public class LayoutEngine
     {
-        private List<Entity> _Entities
-            = new List<Entity>();
-        private List<Filter> _Filters
-            = new List<Filter>();
-        private List<Model> _Models
-            = new List<Model>();
+        private Project _Project
+            = null;
+
+        public Project Project
+        {
+            get { return _Project; }
+            set { _Project = value; }
+        }
 
         public void Output(List<Point> layout)
         {
@@ -26,8 +29,7 @@ namespace QuickModel3D.Model
         {
             var stack = new Stack<Point>();
             var layout = new List<Point>();
-            var point_zero = new Point(0, 0, 0);
-            var point = point_zero;
+            var point = new Point(0, 0, 0);
             stack.Push(point);
             layout.Add(point);
             if (count == 1)

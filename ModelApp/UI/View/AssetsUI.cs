@@ -87,9 +87,10 @@ namespace QuickModel3D.UI
             }
             else
             {
-                double layout_count_log =
-                    0.778151 * (entity_count - 2) * 0.69897 +
-                    Sartrey.Math.LogFactorial(entity_count, 10);
+                //double layout_count_log =
+                //    0.778151 * (entity_count - 2) * 0.69897 +
+                //    Sartrey.Math.LogFactorial(entity_count, 10);
+                double layout_count_log = 0;
                 long log = (long)System.Math.Floor(layout_count_log);
                 TbxPreStat.Text += "可能的空间布局方案共有约 10e" + log + " 个。";
             }

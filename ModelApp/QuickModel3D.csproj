@@ -51,7 +51,7 @@
     <Compile Include="Model\Filter.cs" />
     <Compile Include="Model\Filter\AbsoluteFilter.cs" />
     <Compile Include="Model\Filter\RelativeFilter.cs" />
-    <Compile Include="Model\Filter\TranslateFilter.cs" />
+    <Compile Include="Model\Filter\StructureFilter.cs" />
     <Compile Include="Model\LayoutEngine.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Point.cs" />
