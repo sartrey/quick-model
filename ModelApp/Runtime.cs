@@ -29,6 +29,10 @@ namespace QuickModel3D
             = new WindowHub();
         private Project _Project
             = null;
+        private Engine _Engine
+            = new Engine();
+        private ModelHub _ModelHub
+            = new ModelHub();
 
         public WindowHub WindowHub 
         {
@@ -38,7 +42,21 @@ namespace QuickModel3D
         public Project Project
         {
             get { return _Project; }
-            set { _Project = value; }
+            set 
+            {
+                _Project = value;
+                _Engine.Project = value;
+            }
+        }
+
+        public Engine Engine 
+        {
+            get { return _Engine; }
+        }
+
+        public ModelHub ModelHub 
+        {
+            get { return _ModelHub; }
         }
 
         public Control GetViewById(string id) 

@@ -87,5 +87,14 @@ namespace QuickModel3D.Model
                     _ModelRemoved(model);
             }
         }
+
+        public void RemoveAllModels()
+        {
+
+            if (_ModelRemoved != null)
+                foreach (var model in _Models)
+                    _ModelRemoved(model);
+            _Models.Clear();
+        }
     }
 }

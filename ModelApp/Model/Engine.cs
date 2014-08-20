@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
 
 namespace QuickModel3D.Model
 {
@@ -9,7 +8,7 @@ namespace QuickModel3D.Model
         private Project _Project
             = null;
 
-        private event Action _ModelCreated;
+        private event Action<Model> _ModelCreated;
 
         public Project Project
         {
@@ -17,13 +16,13 @@ namespace QuickModel3D.Model
             set { _Project = value; }
         }
 
-        public event Action ModelCreated 
+        public event Action<Model> ModelCreated 
         {
             add { _ModelCreated += value; }
             remove { _ModelCreated -= value; }
         }
 
-        public void Output(List<Point> layout)
+        public void Output(List<PointIterator> layout)
         {
             Console.WriteLine("--layout--");
             foreach (var p in layout)
@@ -31,14 +30,22 @@ namespace QuickModel3D.Model
                     string.Format("Point [X:{0} Y:{1} Z:{2}]",
                     p.X, p.Y, p.Z));
             Console.WriteLine("----------");
+
+            int count = Project.Entities.Count;
+            var model = new Model();
+            model.Entities = Project.Entities.EntityArray;
+            for (int i = 0; i < count; i++)
+                model.KeyPoints[i] = layout[i].ToPoint();
+            if (_ModelCreated != null)
+                _ModelCreated(model);
         }
 
         public void Generate()
         {
-            int count = _Project.Entities.Count;
-            var stack = new Stack<Point>();
-            var layout = new List<Point>();
-            var point = new Point(0, 0, 0);
+            int count = Project.Entities.Count;
+            var stack = new Stack<PointIterator>();
+            var layout = new List<PointIterator>();
+            var point = new PointIterator(0, 0, 0);
             stack.Push(point);
             layout.Add(point);
             while (true)

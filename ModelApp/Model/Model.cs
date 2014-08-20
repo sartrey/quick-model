@@ -11,28 +11,32 @@ namespace QuickModel3D.Model
             = -1;
         private Entity[] _Entities 
             = null;
-        private Point[] _Locations
+        private Point[] _KeyPoints
             = null;
 
         public int Id 
         {
             get { return _Id; }
+            set { _Id = value; }
         }
 
-        public Entity[] Entities 
+        public Entity[] Entities
         {
             get { return _Entities; }
+            set
+            {
+                _Entities = value;
+                _KeyPoints = new Point[value.Length];
+            }
         }
 
-        public Point[] Locations 
+        public Point[] KeyPoints
         {
-            get { return _Locations; }
+            get { return _KeyPoints; }
         }
 
-        public Model(Entity[] entities) 
+        public Model() 
         {
-            _Entities = entities;
-            _Locations = new Point[entities.Length];
         }
     }
 }

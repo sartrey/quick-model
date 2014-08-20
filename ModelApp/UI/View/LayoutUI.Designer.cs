@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.Panel2 = new System.Windows.Forms.Panel();
-            this.LsvLayout = new System.Windows.Forms.ListView();
-            this.ChbFileCache = new System.Windows.Forms.CheckBox();
-            this.BtnGenerate = new System.Windows.Forms.Button();
-            this.ColhPoints = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Progress = new System.Windows.Forms.ProgressBar();
-            this.BtnSelect = new System.Windows.Forms.Button();
-            this.BtnFilter = new System.Windows.Forms.Button();
             this.LblPreCount = new System.Windows.Forms.Label();
+            this.BtnFilter = new System.Windows.Forms.Button();
+            this.BtnGenerate = new System.Windows.Forms.Button();
+            this.ChbFileCache = new System.Windows.Forms.CheckBox();
+            this.Panel2 = new System.Windows.Forms.Panel();
+            this.BtnSelect = new System.Windows.Forms.Button();
+            this.Progress = new System.Windows.Forms.ProgressBar();
+            this.LsvLayout = new System.Windows.Forms.ListView();
+            this.ColhPoints = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColhId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColhArrayUp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,31 +57,37 @@
             this.Panel1.Size = new System.Drawing.Size(640, 50);
             this.Panel1.TabIndex = 5;
             // 
-            // Panel2
+            // LblPreCount
             // 
-            this.Panel2.Controls.Add(this.BtnSelect);
-            this.Panel2.Controls.Add(this.Progress);
-            this.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel2.Location = new System.Drawing.Point(0, 430);
-            this.Panel2.Name = "Panel2";
-            this.Panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel2.Size = new System.Drawing.Size(640, 50);
-            this.Panel2.TabIndex = 9;
+            this.LblPreCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblPreCount.Location = new System.Drawing.Point(244, 10);
+            this.LblPreCount.Name = "LblPreCount";
+            this.LblPreCount.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblPreCount.Size = new System.Drawing.Size(242, 30);
+            this.LblPreCount.TabIndex = 15;
+            this.LblPreCount.Text = "预估总数：";
+            this.LblPreCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // LsvLayout
+            // BtnFilter
             // 
-            this.LsvLayout.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColhPoints});
-            this.LsvLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LsvLayout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LsvLayout.FullRowSelect = true;
-            this.LsvLayout.GridLines = true;
-            this.LsvLayout.Location = new System.Drawing.Point(0, 50);
-            this.LsvLayout.Name = "LsvLayout";
-            this.LsvLayout.Size = new System.Drawing.Size(640, 380);
-            this.LsvLayout.TabIndex = 10;
-            this.LsvLayout.UseCompatibleStateImageBehavior = false;
-            this.LsvLayout.View = System.Windows.Forms.View.Details;
+            this.BtnFilter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnFilter.Location = new System.Drawing.Point(130, 10);
+            this.BtnFilter.Name = "BtnFilter";
+            this.BtnFilter.Size = new System.Drawing.Size(114, 30);
+            this.BtnFilter.TabIndex = 14;
+            this.BtnFilter.Text = "筛选布局";
+            this.BtnFilter.UseVisualStyleBackColor = true;
+            // 
+            // BtnGenerate
+            // 
+            this.BtnGenerate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnGenerate.Location = new System.Drawing.Point(10, 10);
+            this.BtnGenerate.Name = "BtnGenerate";
+            this.BtnGenerate.Size = new System.Drawing.Size(120, 30);
+            this.BtnGenerate.TabIndex = 12;
+            this.BtnGenerate.Text = "穷举布局";
+            this.BtnGenerate.UseVisualStyleBackColor = true;
+            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // ChbFileCache
             // 
@@ -93,30 +101,16 @@
             this.ChbFileCache.Text = "使用文件缓存代替内存";
             this.ChbFileCache.UseVisualStyleBackColor = false;
             // 
-            // BtnGenerate
+            // Panel2
             // 
-            this.BtnGenerate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnGenerate.Location = new System.Drawing.Point(10, 10);
-            this.BtnGenerate.Name = "BtnGenerate";
-            this.BtnGenerate.Size = new System.Drawing.Size(120, 30);
-            this.BtnGenerate.TabIndex = 12;
-            this.BtnGenerate.Text = "穷举布局";
-            this.BtnGenerate.UseVisualStyleBackColor = true;
-            this.BtnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
-            // 
-            // ColhPoints
-            // 
-            this.ColhPoints.Text = "坐标";
-            this.ColhPoints.Width = 300;
-            // 
-            // Progress
-            // 
-            this.Progress.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Progress.Location = new System.Drawing.Point(560, 10);
-            this.Progress.Name = "Progress";
-            this.Progress.Size = new System.Drawing.Size(70, 30);
-            this.Progress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.Progress.TabIndex = 4;
+            this.Panel2.Controls.Add(this.BtnSelect);
+            this.Panel2.Controls.Add(this.Progress);
+            this.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Panel2.Location = new System.Drawing.Point(0, 430);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.Panel2.Size = new System.Drawing.Size(640, 50);
+            this.Panel2.TabIndex = 9;
             // 
             // BtnSelect
             // 
@@ -128,26 +122,45 @@
             this.BtnSelect.Text = "应用所选布局";
             this.BtnSelect.UseVisualStyleBackColor = true;
             // 
-            // BtnFilter
+            // Progress
             // 
-            this.BtnFilter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnFilter.Location = new System.Drawing.Point(130, 10);
-            this.BtnFilter.Name = "BtnFilter";
-            this.BtnFilter.Size = new System.Drawing.Size(114, 30);
-            this.BtnFilter.TabIndex = 14;
-            this.BtnFilter.Text = "筛选布局";
-            this.BtnFilter.UseVisualStyleBackColor = true;
+            this.Progress.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Progress.Location = new System.Drawing.Point(560, 10);
+            this.Progress.Name = "Progress";
+            this.Progress.Size = new System.Drawing.Size(70, 30);
+            this.Progress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.Progress.TabIndex = 4;
             // 
-            // LblPreCount
+            // LsvLayout
             // 
-            this.LblPreCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LblPreCount.Location = new System.Drawing.Point(244, 10);
-            this.LblPreCount.Name = "LblPreCount";
-            this.LblPreCount.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.LblPreCount.Size = new System.Drawing.Size(242, 30);
-            this.LblPreCount.TabIndex = 15;
-            this.LblPreCount.Text = "预估总数：";
-            this.LblPreCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LsvLayout.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColhId,
+            this.ColhPoints,
+            this.ColhArrayUp});
+            this.LsvLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LsvLayout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LsvLayout.FullRowSelect = true;
+            this.LsvLayout.GridLines = true;
+            this.LsvLayout.Location = new System.Drawing.Point(0, 50);
+            this.LsvLayout.Name = "LsvLayout";
+            this.LsvLayout.Size = new System.Drawing.Size(640, 380);
+            this.LsvLayout.TabIndex = 10;
+            this.LsvLayout.UseCompatibleStateImageBehavior = false;
+            this.LsvLayout.View = System.Windows.Forms.View.Details;
+            // 
+            // ColhPoints
+            // 
+            this.ColhPoints.Text = "关键点位";
+            this.ColhPoints.Width = 350;
+            // 
+            // ColhId
+            // 
+            this.ColhId.Text = "索引";
+            // 
+            // ColhArrayUp
+            // 
+            this.ColhArrayUp.Text = "排列上限";
+            this.ColhArrayUp.Width = 120;
             // 
             // LayoutUI
             // 
@@ -177,5 +190,7 @@
         private System.Windows.Forms.Button BtnSelect;
         private System.Windows.Forms.Label LblPreCount;
         private System.Windows.Forms.Button BtnFilter;
+        private System.Windows.Forms.ColumnHeader ColhId;
+        private System.Windows.Forms.ColumnHeader ColhArrayUp;
     }
 }
