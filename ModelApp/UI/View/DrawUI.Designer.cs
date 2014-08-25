@@ -35,11 +35,13 @@
             this.BtnEraser = new System.Windows.Forms.ToolStripButton();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
             this.Lbl1 = new System.Windows.Forms.ToolStripLabel();
-            this.CobxWidth = new System.Windows.Forms.ToolStripComboBox();
-            this.CvsTexture = new QuickModel3D.Canvas();
+            this.CobxBrush = new System.Windows.Forms.ToolStripComboBox();
             this.split2 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnBackColor = new System.Windows.Forms.ToolStripButton();
             this.BtnForeColor = new System.Windows.Forms.ToolStripButton();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.split3 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSave = new System.Windows.Forms.ToolStripButton();
             this.Toolbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,10 +54,12 @@
             this.BtnEraser,
             this.split1,
             this.Lbl1,
-            this.CobxWidth,
+            this.CobxBrush,
             this.split2,
             this.BtnBackColor,
-            this.BtnForeColor});
+            this.BtnForeColor,
+            this.split3,
+            this.BtnSave});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
             this.Toolbar.Size = new System.Drawing.Size(600, 25);
@@ -68,6 +72,7 @@
             this.BtnPen.Name = "BtnPen";
             this.BtnPen.Size = new System.Drawing.Size(52, 22);
             this.BtnPen.Text = "铅笔";
+            this.BtnPen.Click += new System.EventHandler(this.BtnPen_Click);
             // 
             // BtnLine
             // 
@@ -76,6 +81,7 @@
             this.BtnLine.Name = "BtnLine";
             this.BtnLine.Size = new System.Drawing.Size(52, 22);
             this.BtnLine.Text = "直线";
+            this.BtnLine.Click += new System.EventHandler(this.BtnLine_Click);
             // 
             // BtnEraser
             // 
@@ -84,6 +90,7 @@
             this.BtnEraser.Name = "BtnEraser";
             this.BtnEraser.Size = new System.Drawing.Size(52, 22);
             this.BtnEraser.Text = "橡皮";
+            this.BtnEraser.Click += new System.EventHandler(this.BtnEraser_Click);
             // 
             // split1
             // 
@@ -94,20 +101,13 @@
             // 
             this.Lbl1.Name = "Lbl1";
             this.Lbl1.Size = new System.Drawing.Size(32, 22);
-            this.Lbl1.Text = "线型";
+            this.Lbl1.Text = "笔触";
             // 
-            // CobxWidth
+            // CobxBrush
             // 
-            this.CobxWidth.Name = "CobxWidth";
-            this.CobxWidth.Size = new System.Drawing.Size(121, 25);
-            // 
-            // CvsTexture
-            // 
-            this.CvsTexture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CvsTexture.Location = new System.Drawing.Point(0, 25);
-            this.CvsTexture.Name = "CvsTexture";
-            this.CvsTexture.Size = new System.Drawing.Size(600, 375);
-            this.CvsTexture.TabIndex = 3;
+            this.CobxBrush.Name = "CobxBrush";
+            this.CobxBrush.Size = new System.Drawing.Size(121, 25);
+            this.CobxBrush.SelectedIndexChanged += new System.EventHandler(this.CobxBrush_SelectedIndexChanged);
             // 
             // split2
             // 
@@ -121,6 +121,7 @@
             this.BtnBackColor.Name = "BtnBackColor";
             this.BtnBackColor.Size = new System.Drawing.Size(64, 22);
             this.BtnBackColor.Text = "背景色";
+            this.BtnBackColor.Click += new System.EventHandler(this.BtnBackColor_Click);
             // 
             // BtnForeColor
             // 
@@ -129,12 +130,36 @@
             this.BtnForeColor.Name = "BtnForeColor";
             this.BtnForeColor.Size = new System.Drawing.Size(64, 22);
             this.BtnForeColor.Text = "前景色";
+            this.BtnForeColor.Click += new System.EventHandler(this.BtnForeColor_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 25);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(600, 375);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // split3
+            // 
+            this.split3.Name = "split3";
+            this.split3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.Image")));
+            this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(52, 22);
+            this.BtnSave.Text = "保存";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // DrawUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.CvsTexture);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.Toolbar);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "DrawUI";
@@ -149,16 +174,18 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip Toolbar;
-        private Canvas CvsTexture;
         private System.Windows.Forms.ToolStripButton BtnPen;
         private System.Windows.Forms.ToolStripButton BtnLine;
-        private System.Windows.Forms.ToolStripComboBox CobxWidth;
+        private System.Windows.Forms.ToolStripComboBox CobxBrush;
         private System.Windows.Forms.ToolStripLabel Lbl1;
         private System.Windows.Forms.ToolStripSeparator split1;
         private System.Windows.Forms.ToolStripButton BtnEraser;
         private System.Windows.Forms.ToolStripSeparator split2;
         private System.Windows.Forms.ToolStripButton BtnBackColor;
         private System.Windows.Forms.ToolStripButton BtnForeColor;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.ToolStripSeparator split3;
+        private System.Windows.Forms.ToolStripButton BtnSave;
 
     }
 }

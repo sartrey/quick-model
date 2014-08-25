@@ -6,7 +6,8 @@ namespace QuickModel3D.Model
     {
         private int _Id = -1;
         private string _Name = null;
-        private Shape _Shape = null;
+        private Shape _Shape 
+            = new Shape();
         private Image _Texture = null;
 
         public Entity() 

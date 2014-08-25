@@ -36,7 +36,7 @@
             this.CobxGeometry = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Grp3 = new System.Windows.Forms.GroupBox();
-            this.BtnClean = new System.Windows.Forms.Button();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.BtnDraw = new System.Windows.Forms.Button();
             this.BtnImport = new System.Windows.Forms.Button();
             this.PicTexture = new System.Windows.Forms.PictureBox();
@@ -115,7 +115,7 @@
             // 
             // Grp3
             // 
-            this.Grp3.Controls.Add(this.BtnClean);
+            this.Grp3.Controls.Add(this.BtnClear);
             this.Grp3.Controls.Add(this.BtnDraw);
             this.Grp3.Controls.Add(this.BtnImport);
             this.Grp3.Controls.Add(this.PicTexture);
@@ -126,14 +126,15 @@
             this.Grp3.TabStop = false;
             this.Grp3.Text = "贴图";
             // 
-            // BtnClean
+            // BtnClear
             // 
-            this.BtnClean.Location = new System.Drawing.Point(174, 113);
-            this.BtnClean.Name = "BtnClean";
-            this.BtnClean.Size = new System.Drawing.Size(100, 27);
-            this.BtnClean.TabIndex = 18;
-            this.BtnClean.Text = "清除";
-            this.BtnClean.UseVisualStyleBackColor = true;
+            this.BtnClear.Location = new System.Drawing.Point(174, 113);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(100, 27);
+            this.BtnClear.TabIndex = 18;
+            this.BtnClear.Text = "清除";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // BtnDraw
             // 
@@ -153,14 +154,15 @@
             this.BtnImport.TabIndex = 16;
             this.BtnImport.Text = "导入...";
             this.BtnImport.UseVisualStyleBackColor = true;
+            this.BtnImport.Click += new System.EventHandler(this.BtnImport_Click);
             // 
             // PicTexture
             // 
-            this.PicTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PicTexture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PicTexture.Location = new System.Drawing.Point(22, 30);
             this.PicTexture.Name = "PicTexture";
             this.PicTexture.Size = new System.Drawing.Size(110, 110);
+            this.PicTexture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicTexture.TabIndex = 15;
             this.PicTexture.TabStop = false;
             // 
@@ -216,7 +218,7 @@
         private System.Windows.Forms.ComboBox CobxGeometry;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox Grp3;
-        private System.Windows.Forms.Button BtnClean;
+        private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button BtnDraw;
         private System.Windows.Forms.Button BtnImport;
         private System.Windows.Forms.PictureBox PicTexture;

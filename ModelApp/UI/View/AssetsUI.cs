@@ -118,9 +118,9 @@ namespace QuickModel3D.UI
         public void UpdateEntity(Entity entity) 
         {
             var node = GetNodeById(entity.Id);
-            node.Text = 
+            node.Text =
                 string.IsNullOrWhiteSpace(entity.Name) ?
-                "（功能模块" + entity.Id.ToString() + "）" :
+                "（未命名）" :
                 entity.Name;
         }
 

@@ -81,12 +81,6 @@
     <Compile Include="UI\Dialog\AddBatchUI.Designer.cs">
       <DependentUpon>AddBatchUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\ModelUI.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\View\ModelUI.Designer.cs">
-      <DependentUpon>ModelUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\View\AssetsUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,9 +150,6 @@
     </Compile>
     <EmbeddedResource Include="UI\Dialog\AddBatchUI.resx">
       <DependentUpon>AddBatchUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\View\ModelUI.resx">
-      <DependentUpon>ModelUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\View\AssetsUI.resx">
       <DependentUpon>AssetsUI.cs</DependentUpon>

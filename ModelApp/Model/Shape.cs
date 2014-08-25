@@ -14,17 +14,37 @@ namespace QuickModel3D.Model
 
     public class Shape
     {
-        private Point _BasePoint;
-        private Point _OffsetPoint;
+        private ShapeType _Type;
+        private Point _Translate;
+        private Point _Scale;
+        private Point _Rotate;
 
-        public Point BasePoint 
+        public ShapeType Type 
         {
-            get { return _BasePoint; }
+            get { return _Type; }
         }
 
-        public Point Center 
+        public Point Translate
         {
-            get { return null; } 
+            get { return _Translate; }
+        }
+
+        public Point Scale
+        {
+            get { return _Scale; }
+        }
+        
+        public Point Rotate
+        {
+            get { return _Rotate; }
+        }
+
+        public Shape() 
+        {
+            _Type = ShapeType.Cube;
+            _Translate = new Point(0, 0, 0);
+            _Scale = new Point(0, 0, 0);
+            _Rotate = new Point(0, 0, 0);
         }
     }
 }

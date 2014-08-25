@@ -47,10 +47,14 @@ namespace QuickModel3D.UI
 
         private void MnuEntity_Property_Click(object sender, EventArgs e)
         {
-            var property = new EntityUI();
             var runtime = Runtime.Instance;
+            if (runtime.Project == null)
+                return;
             var entities = runtime.Project.EntityHub;
             var entity = entities.CurrentEntity;
+            if (entity == null)
+                return;
+            var property = new EntityUI();
             property.Entity = entity;
 
             var dlg = new Dialog(property, "模块属性");
