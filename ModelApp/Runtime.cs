@@ -1,6 +1,7 @@
 ﻿using QuickModel3D.Model;
 using Sartrey;
 using Sartrey.UI;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QuickModel3D
@@ -54,9 +55,22 @@ namespace QuickModel3D
             get { return _Engine; }
         }
 
-        public ModelHub ModelHub 
+        public ModelHub Models 
         {
             get { return _ModelHub; }
+        }
+
+        public string UnityDataPath 
+        {
+            get 
+            {
+                string path = Path.Combine(
+                    Application.StartupPath,
+                    "model", "model_Data", "Temp");
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+                return path; 
+            }
         }
 
         public Control GetViewById(string id) 

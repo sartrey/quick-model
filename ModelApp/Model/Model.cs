@@ -1,42 +1,76 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace QuickModel3D.Model
 {
     public class Model
     {
-        private int _Id
+        private string _Name
+            = null;
+        private Project _Project
+            = null;
+        private int _LayoutIndex
             = -1;
-        private Entity[] _Entities 
-            = null;
-        private Point[] _KeyPoints
-            = null;
+        private int _ArrangeIndex
+            = -1;
 
-        public int Id 
+        public string Name
         {
-            get { return _Id; }
-            set { _Id = value; }
+            get { return _Name; }
+            set { _Name = string.IsNullOrWhiteSpace(value) ? null : value; }
+        }
+
+        public Project Project 
+        {
+            get { return _Project; }
+            set { _Project = value; }
+        }
+
+        public int LayoutIndex
+        {
+            get {return _LayoutIndex;}
+            set{ _LayoutIndex = value;}
         }
 
         public Entity[] Entities
         {
-            get { return _Entities; }
-            set
+            get { return Project.EntityHub.EntityArray; }
+        }
+
+        public Layout Layout
+        {
+            get 
             {
-                _Entities = value;
-                _KeyPoints = new Point[value.Length];
+                if(_LayoutIndex < 0)
+                    return null;
+                return _Project.LayoutHub[_LayoutIndex]; 
             }
         }
 
-        public Point[] KeyPoints
+        public int[] Arrange 
         {
-            get { return _KeyPoints; }
+            get 
+            {
+                if (_ArrangeIndex < 0)
+                    return null;
+                return _Project.Arranges[_ArrangeIndex];
+            }
         }
 
         public Model() 
         {
+        }
+
+        public XElement ToStructureXML() 
+        {
+            var xml = new XElement("model",
+                Layout.ToXML());
+            return xml;
+        }
+
+        public XElement ToFullXML() 
+        {
+            return null;
         }
     }
 }

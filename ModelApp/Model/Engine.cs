@@ -5,10 +5,10 @@ namespace QuickModel3D.Model
 {
     public class Engine
     {
+        private string _Version
+            = "1.0";
         private Project _Project
             = null;
-
-        private event Action<Model> _ModelCreated;
 
         public Project Project
         {
@@ -16,44 +16,36 @@ namespace QuickModel3D.Model
             set { _Project = value; }
         }
 
-        public event Action<Model> ModelCreated 
+        private Layout CreateLayout(List<PointIterator> iters)
         {
-            add { _ModelCreated += value; }
-            remove { _ModelCreated -= value; }
+            var points = new Point[iters.Count];
+            for (int i = 0; i < iters.Count; i++)
+            {
+                var point = iters[i].ToPoint();
+                points[i] = point;
+            }
+            var layout = new Layout();
+            layout.Points = points;
+            return layout;
         }
 
-        public void Output(List<PointIterator> layout)
+        public void GenerateLayout()
         {
-            Console.WriteLine("--layout--");
-            foreach (var p in layout)
-                Console.WriteLine(
-                    string.Format("Point [X:{0} Y:{1} Z:{2}]",
-                    p.X, p.Y, p.Z));
-            Console.WriteLine("----------");
-
-            int count = Project.Entities.Count;
-            var model = new Model();
-            model.Entities = Project.Entities.EntityArray;
-            for (int i = 0; i < count; i++)
-                model.KeyPoints[i] = layout[i].ToPoint();
-            if (_ModelCreated != null)
-                _ModelCreated(model);
-        }
-
-        public void Generate()
-        {
-            int count = Project.Entities.Count;
+            var layouts = Project.LayoutHub;
+            layouts.RemoveAllLayouts();
+            int count = Project.EntityHub.Count;
             var stack = new Stack<PointIterator>();
-            var layout = new List<PointIterator>();
+            var points = new List<PointIterator>();
             var point = new PointIterator(0, 0, 0);
             stack.Push(point);
-            layout.Add(point);
+            points.Add(point);
             while (true)
             {
-                if (layout.Count == count)
+                if (points.Count == count)
                 {
-                    Output(layout);
-                    layout.Remove(point);
+                    var layout = CreateLayout(points);
+                    layouts.AddLayout(layout);
+                    points.Remove(point);
                     stack.Pop();
                     if (stack.Count == 0)
                         break;
@@ -64,7 +56,7 @@ namespace QuickModel3D.Model
                 {
                     if (point.NextPoint == null)
                     {
-                        layout.Remove(point);
+                        points.Remove(point);
                         stack.Pop();
                         if (stack.Count == 0)
                             break;
@@ -75,10 +67,59 @@ namespace QuickModel3D.Model
                     {
                         point = point.NextPoint;
                         stack.Push(point);
-                        layout.Add(point);
+                        points.Add(point);
                     }
                 }
             }
+        }
+
+        private bool NextArrange(List<int> arrange) 
+        {
+            int pos1 = 0, pos2 = 0, find = 0;
+            int end = arrange.Count - 1;
+            pos1 = end;
+            while(pos1 != 0)
+            {
+                pos2 = pos1;
+                pos1--;
+                if(arrange[pos1] < arrange[pos2])
+                {
+                    find = end;
+                    while (arrange[find] <= arrange[pos1])
+                        find--;
+                    int temp = arrange[find];
+                    arrange[find] = arrange[pos1];
+                    arrange[pos1] = temp;
+                    arrange.Reverse(pos2, end - pos2 + 1);
+                    return true;
+                }
+            }
+            arrange.Reverse(pos1, end - pos1 + 1);
+            return false;
+        }
+
+        private int[] CreateArrange(List<int> iters)
+        {
+            var arrange = new int[iters.Count];
+            var entities = Project.EntityHub.EntityArray;
+            for (int i = 0; i < iters.Count; i++)
+                arrange[i] = entities[iters[i]].Id;
+            return arrange;
+        }
+
+        public void GenerateArrange()
+        {
+            var arranges = Project.Arranges;
+            arranges.Clear();
+            int count = Project.EntityHub.Count;
+            //count < 1 return;
+            var iters = new List<int>();
+            for (int i = 0; i < count; i++)
+                iters.Add(i);
+            do {
+                var arrange = CreateArrange(iters);
+                arranges.Add(arrange);
+            } while (NextArrange(iters));
         }
     }
 }

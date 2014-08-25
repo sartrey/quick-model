@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Layout.cs" />
+    <Compile Include="Model\LayoutHub.cs" />
     <Compile Include="Model\ModelHub.cs" />
     <Compile Include="Model\FilterHub.cs" />
     <Compile Include="Model\EntityHub.cs" />
@@ -109,11 +111,11 @@
     <Compile Include="UI\View\Property\FilterUI.Designer.cs">
       <DependentUpon>FilterUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\LayoutUI.cs">
+    <Compile Include="UI\View\StructureUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\View\LayoutUI.Designer.cs">
-      <DependentUpon>LayoutUI.cs</DependentUpon>
+    <Compile Include="UI\View\StructureUI.Designer.cs">
+      <DependentUpon>StructureUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Window\MainWindow.Action.Model.cs">
       <SubType>Form</SubType>
@@ -167,8 +169,8 @@
     <EmbeddedResource Include="UI\View\Property\EntityUI.resx">
       <DependentUpon>EntityUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\View\LayoutUI.resx">
-      <DependentUpon>LayoutUI.cs</DependentUpon>
+    <EmbeddedResource Include="UI\View\StructureUI.resx">
+      <DependentUpon>StructureUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Window\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

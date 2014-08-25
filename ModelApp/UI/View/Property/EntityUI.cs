@@ -5,16 +5,16 @@ namespace QuickModel3D.UI
 {
     public partial class EntityUI : DialogUI
     {
-        private Entity _Model
+        private Entity _Entity
             = null;
 
-        public Entity Model 
+        public Entity Entity
         {
-            get { return _Model; }
+            get { return _Entity; }
             set 
             {
-                _Model = value;
-                UpdateModel();
+                _Entity = value;
+                UpdateEntity();
             }
         }
 
@@ -23,16 +23,17 @@ namespace QuickModel3D.UI
             InitializeComponent();
         }
 
-        public void UpdateModel() 
+        public void UpdateEntity() 
         {
-            LblId.Text = "标识：" + _Model.Id.ToString();
-            TbxName.Text = _Model.Name;
-
+            if (_Entity == null)
+                return;
+            LblId.Text = "索引：" + _Entity.Id.ToString();
+            TbxName.Text = _Entity.Name;
         }
 
         private void BtnOK_Click(object sender, System.EventArgs e)
         {
-            _Model.Name = TbxName.Text;
+            _Entity.Name = TbxName.Text;
             FinishDialog(true);
         }
 
@@ -44,7 +45,7 @@ namespace QuickModel3D.UI
         private void BtnDraw_Click(object sender, System.EventArgs e)
         {
             var draw = new DrawUI();
-            draw.Model = _Model.Texture;
+            draw.Model = _Entity.Texture;
 
             var doc = new UI.Document("texture", draw, "绘制贴图");
             doc.Show();

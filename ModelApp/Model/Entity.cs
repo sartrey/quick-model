@@ -9,14 +9,14 @@ namespace QuickModel3D.Model
         private Shape _Shape = null;
         private Image _Texture = null;
 
-        public Entity(int id) 
+        public Entity() 
         {
-            _Id = id;
         }
 
         public int Id 
         { 
-            get { return _Id; } 
+            get { return _Id; }
+            set { _Id = value; }
         }
 
         public string Name 

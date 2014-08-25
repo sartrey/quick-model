@@ -14,15 +14,15 @@ namespace QuickModel3D.Model
 
     public class Shape
     {
-        private PointIterator _BasePoint;
-        private PointIterator _OffsetPoint;
+        private Point _BasePoint;
+        private Point _OffsetPoint;
 
-        public PointIterator BasePoint 
+        public Point BasePoint 
         {
             get { return _BasePoint; }
         }
 
-        public PointIterator Center 
+        public Point Center 
         {
             get { return null; } 
         }

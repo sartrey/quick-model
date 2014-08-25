@@ -59,7 +59,8 @@ namespace QuickModel3D.Model
         {
             get
             {
-                if (_EntityArray == null)
+                if (_EntityArray == null || 
+                    _EntityArray.Length != _Entities.Count)
                     _EntityArray = _Entities.ToArray();
                 return _EntityArray;
             }

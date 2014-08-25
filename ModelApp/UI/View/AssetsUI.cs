@@ -74,7 +74,7 @@ namespace QuickModel3D.UI
         {
             TbxPreStat.Text = "";
             var runtime = Runtime.Instance;
-            var entities = runtime.Project.Entities;
+            var entities = runtime.Project.EntityHub;
             int entity_count = entities.Count;
             TbxPreStat.Text += "共有功能模块 " + entity_count + " 个。" + Environment.NewLine;
             if(entity_count == 1)
@@ -101,7 +101,7 @@ namespace QuickModel3D.UI
             var node = new TreeNode();
             node.Text = 
                 string.IsNullOrWhiteSpace(entity.Name) ? 
-                "（功能模块" + entity.Id.ToString() + "）" : 
+                "（未命名）" : 
                 entity.Name;
             node.Tag = entity.Id;
             EntityNode.Nodes.Add(node);
@@ -135,13 +135,13 @@ namespace QuickModel3D.UI
                 var type = (string)node.Parent.Tag;
                 if (type == "entity")
                 {
-                    var entities = runtime.Project.Entities;
+                    var entities = runtime.Project.EntityHub;
                     var entity = entities[(int)node.Tag];
                     entities.CurrentEntity = entity;
                 }
                 else if (type== "filter")
                 {
-                    var filters = runtime.Project.Filters;
+                    var filters = runtime.Project.FilterHub;
                     var filter = filters[(int)node.Tag];
                     filters.CurrentFilter = filter;
                 }

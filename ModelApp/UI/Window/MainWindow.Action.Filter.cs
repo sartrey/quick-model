@@ -9,7 +9,7 @@ namespace QuickModel3D.UI
         private void MnuFilter_Add_Click(object sender, EventArgs e)
         {
             var runtime = Runtime.Instance;
-            var filters = runtime.Project.Filters;
+            var filters = runtime.Project.FilterHub;
             var filter = new Filter(filters.NewId);
             filters.LinkFilter(filter);
         }
@@ -21,7 +21,7 @@ namespace QuickModel3D.UI
             TreeNode node = null;// assets.CurrentNode;
             if (node != null)
             {
-                var filters = runtime.Project.Filters;
+                var filters = runtime.Project.FilterHub;
                 var filter = filters[(int)node.Tag];
                 filters.KickFilter(filter);
             }

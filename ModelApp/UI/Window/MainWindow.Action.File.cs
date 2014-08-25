@@ -12,7 +12,7 @@ namespace QuickModel3D.UI
 
             var assets = runtime.GetViewById("assets") as AssetsUI;
 
-            var entities = project.Entities;
+            var entities = project.EntityHub;
             entities.EntityAdded += assets.AddEntity;
             entities.EntityRemoved += assets.RemoveEntity;
             entities.EntityUpdated += assets.UpdateEntity;
@@ -32,7 +32,6 @@ namespace QuickModel3D.UI
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
             var project = new Model.Project();
-            project.Path = dlg.SelectedPath;
             BindProject(project);
         }
 

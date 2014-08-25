@@ -15,29 +15,14 @@ namespace QuickModel3D.Model
         private event Action<Model> _ModelAdded;
         private event Action<Model> _ModelRemoved;
 
-        public Model this[int id] 
+        public Model this[string name] 
         {
             get 
             {
                 foreach (var model in _Models)
-                    if (model.Id == id)
+                    if (model.Name == name)
                         return model;
                 return null;
-            }
-        }
-
-        public int NewId 
-        {
-            get 
-            {
-                var ids = new List<int>();
-                foreach (Model model in _Models)
-                    ids.Add(model.Id);
-                ids.Sort();
-                for (int i = 0; i < ids.Count; i++) 
-                    if (i != ids[i] - 1)
-                        return i + 1;
-                return ids.Count + 1;
             }
         }
 
@@ -70,7 +55,7 @@ namespace QuickModel3D.Model
 
         public void AddModel(Model model) 
         {
-            if (this[model.Id] == null)
+            if (this[model.Name] == null)
             {
                 _Models.Add(model);
                 if (_ModelAdded != null)
@@ -80,7 +65,7 @@ namespace QuickModel3D.Model
 
         public void RemoveModel(Model model) 
         {
-            if (this[model.Id] != null)
+            if (this[model.Name] != null)
             {
                 _Models.Remove(model);
                 if (_ModelRemoved != null)
