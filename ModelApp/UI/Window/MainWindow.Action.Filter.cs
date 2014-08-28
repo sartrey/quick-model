@@ -23,14 +23,30 @@ namespace QuickModel3D.UI
         private void MnuFilter_Delete_Click(object sender, EventArgs e)
         {
             var runtime = Runtime.Instance;
-            var assets = runtime.GetViewById("assets") as AssetsUI;
-            TreeNode node = null;// assets.CurrentNode;
-            if (node != null)
-            {
-                var filters = runtime.Project.FilterHub;
-                var filter = filters[(int)node.Tag];
+            var filters = runtime.Project.FilterHub;
+            var filter = filters.CurrentFilter;
+            if (filter != null)
                 filters.RemoveFilter(filter);
-            }
+        }
+
+        private void MnuFilter_Property_Click(object sender, System.EventArgs e)
+        {
+            var runtime = Runtime.Instance;
+            if (runtime.Project == null)
+                return;
+            var filters = runtime.Project.FilterHub;
+            var filter = filters.CurrentFilter;
+            if (filter == null)
+                return;
+            var property = new FilterUI();
+            property.Filter = filter;
+
+            var dlg = new Dialog(property, "约束属性");
+            dlg.Show();
+
+            if (dlg.ValidDialogResult(false))
+                return;
+            filters.UpdateFilter(filter);
         }
     }
 }

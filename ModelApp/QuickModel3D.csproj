@@ -112,6 +112,18 @@
     <Compile Include="UI\View\Project\FilterUI.Designer.cs">
       <DependentUpon>FilterUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\View\Project\Filter\ExtremeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Project\Filter\ExtremeUI.Designer.cs">
+      <DependentUpon>ExtremeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\Project\Filter\RelativeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Project\Filter\RelativeUI.Designer.cs">
+      <DependentUpon>RelativeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\View\StructureUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     <EmbeddedResource Include="UI\View\Project\FilterUI.resx">
       <DependentUpon>FilterUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Project\Filter\ExtremeUI.resx">
+      <DependentUpon>ExtremeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Project\Filter\RelativeUI.resx">
+      <DependentUpon>RelativeUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\View\StructureUI.resx">
       <DependentUpon>StructureUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,9 +225,7 @@
       <Name>Sartrey</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\View\Project\Filter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

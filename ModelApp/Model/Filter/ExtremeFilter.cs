@@ -7,7 +7,11 @@ namespace QuickModel3D.Model
 {
     public class ExtremeFilter : Filter
     {
-
+        public override FilterType Type
+        {
+            get { return FilterType.Extreme; }
+        }
+        
         public override int DoWith(Project project)
         {
             throw new NotImplementedException();

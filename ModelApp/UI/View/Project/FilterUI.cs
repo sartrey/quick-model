@@ -3,18 +3,18 @@ using System.Windows.Forms;
 
 namespace QuickModel3D.UI
 {
-    public partial class FilterUI : UserControl
+    public partial class FilterUI : DialogUI
     {
-        private Filter _Model
+        private Model.Filter _Filter
             = null;
 
-        public Filter Model
+        public Model.Filter Filter
         {
-            get { return _Model; }
+            get { return _Filter; }
             set
             {
-                _Model = value;
-                UpdateModel();
+                _Filter = value;
+                UpdateFilter();
             }
         }
 
@@ -23,8 +23,9 @@ namespace QuickModel3D.UI
             InitializeComponent();
         }
 
-        public void UpdateModel()
+        public void UpdateFilter()
         {
+
         }
     }
 }

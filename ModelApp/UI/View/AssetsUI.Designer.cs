@@ -46,22 +46,22 @@
             // TrvAssets
             // 
             this.TrvAssets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TrvAssets.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.TrvAssets.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.TrvAssets.Location = new System.Drawing.Point(0, 0);
             this.TrvAssets.Name = "TrvAssets";
             this.TrvAssets.Size = new System.Drawing.Size(284, 341);
             this.TrvAssets.TabIndex = 4;
             this.TrvAssets.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TrvAssets_AfterSelect);
             // 
-            // AssetsPanel
+            // AssetsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 441);
             this.Controls.Add(this.TrvAssets);
             this.Controls.Add(this.TbxPreStat);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Name = "AssetsPanel";
+            this.Name = "AssetsUI";
+            this.Size = new System.Drawing.Size(284, 441);
             this.ResumeLayout(false);
             this.PerformLayout();
 

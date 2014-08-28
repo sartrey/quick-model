@@ -13,7 +13,6 @@ namespace QuickModel3D.UI
             for (int i = 0; i < count; i++)
             {
                 var entity = new Entity();
-                entity.Id = entities.NewId;
                 entities.AddEntity(entity);
             }
         }

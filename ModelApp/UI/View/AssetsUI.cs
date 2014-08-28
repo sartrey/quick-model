@@ -36,9 +36,17 @@ namespace QuickModel3D.UI
             InitializeComponent();
         }
 
-        public TreeNode GetNodeById(int id)
+        public TreeNode GetEntityNodeById(int id)
         {
             foreach (TreeNode node in EntityNode.Nodes)
+                if (id == (int)node.Tag)
+                    return node;
+            return null;
+        }
+
+        public TreeNode GetFilterNodeById(int id)
+        {
+            foreach (TreeNode node in FilterNode.Nodes)
                 if (id == (int)node.Tag)
                     return node;
             return null;
@@ -110,18 +118,44 @@ namespace QuickModel3D.UI
 
         public void RemoveEntity(Entity entity)
         {
-            var node = GetNodeById(entity.Id);
+            var node = GetEntityNodeById(entity.Id);
             node.Remove();
             UpdateStat();
         }
 
         public void UpdateEntity(Entity entity) 
         {
-            var node = GetNodeById(entity.Id);
+            var node = GetEntityNodeById(entity.Id);
             node.Text =
                 string.IsNullOrWhiteSpace(entity.Name) ?
                 "（未命名）" :
                 entity.Name;
+        }
+
+        public void AddFilter(Model.Filter filter)
+        {
+            var node = new TreeNode();
+            node.Text =
+                string.IsNullOrWhiteSpace(filter.Name) ?
+                "（" + Model.Filter.GetTypeName(filter.Type) + " - 未命名）" :
+                filter.Name;
+            node.Tag = filter.Id;
+            FilterNode.Nodes.Add(node);
+        }
+
+        public void RemoveFilter(Model.Filter filter)
+        {
+            var node = GetFilterNodeById(filter.Id);
+            node.Remove();
+        }
+
+        public void UpdateFilter(Model.Filter filter)
+        {
+            var node = GetFilterNodeById(filter.Id);
+            node.Text =
+                string.IsNullOrWhiteSpace(filter.Name) ?
+                "（" + Model.Filter.GetTypeName(filter.Type) + " - 未命名）" :
+                filter.Name;
         }
 
         private void TrvAssets_AfterSelect(object sender, TreeViewEventArgs e)

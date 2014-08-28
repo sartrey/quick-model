@@ -1,22 +1,42 @@
-﻿using System;
+﻿using QuickModel3D.Model;
+using System;
 using System.Windows.Forms;
 
 namespace QuickModel3D.UI
 {
     public partial class MainWindow
     {
-        private void BindProject(Model.Project project)
+        private void BindProject(Project project)
         {
             var runtime = Runtime.Instance;
-            runtime.Project = project;
-
             var assets = runtime.GetViewById("assets") as AssetsUI;
+            EntityHub entities = null;
+            FilterHub filters = null;
+            var old_project = runtime.Project;
+            if (old_project != null)
+            {
+                entities = old_project.EntityHub;
+                entities.EntityAdded -= assets.AddEntity;
+                entities.EntityRemoved -= assets.RemoveEntity;
+                entities.EntityUpdated -= assets.UpdateEntity;
 
-            var entities = project.EntityHub;
+                filters = old_project.FilterHub;
+                filters.FilterAdded -= assets.AddFilter;
+                filters.FilterRemoved -= assets.RemoveFilter;
+                filters.FilterUpdated -= assets.UpdateFilter;
+            }
+
+            entities = project.EntityHub;
             entities.EntityAdded += assets.AddEntity;
             entities.EntityRemoved += assets.RemoveEntity;
             entities.EntityUpdated += assets.UpdateEntity;
 
+            filters = project.FilterHub;
+            filters.FilterAdded += assets.AddFilter;
+            filters.FilterRemoved += assets.RemoveFilter;
+            filters.FilterUpdated += assets.UpdateFilter;
+
+            runtime.Project = project;
             assets.UpdateProject();
         }
 

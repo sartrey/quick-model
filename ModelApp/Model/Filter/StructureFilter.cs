@@ -7,6 +7,11 @@ namespace QuickModel3D.Model
 {
     public class StructureFilter : Filter
     {
+        public override FilterType Type
+        {
+            get { return FilterType.Unknown; }
+        }
+
         public StructureFilter()
         {
         }

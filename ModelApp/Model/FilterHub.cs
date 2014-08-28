@@ -90,6 +90,7 @@ namespace QuickModel3D.Model
         {
             if (!_Filters.Contains(filter))
             {
+                filter.Id = NewId;
                 _Filters.Add(filter);
                 if (_FilterAdded != null)
                     _FilterAdded(filter);

@@ -90,8 +90,9 @@ namespace QuickModel3D.Model
 
         public void AddEntity(Entity entity) 
         {
-            if (this[entity.Id] == null)
+            if (!_Entities.Contains(entity))
             {
+                entity.Id = NewId;
                 _Entities.Add(entity);
                 if (_EntityAdded != null)
                     _EntityAdded(entity);
@@ -100,7 +101,7 @@ namespace QuickModel3D.Model
 
         public void RemoveEntity(Entity entity) 
         {
-            if (this[entity.Id] != null)
+            if (_Entities.Contains(entity))
             {
                 _Entities.Remove(entity);
                 if (_EntityRemoved != null)

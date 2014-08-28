@@ -15,5 +15,10 @@ namespace QuickModel3D.Model
         {
             throw new NotImplementedException();
         }
+
+        public override FilterType Type
+        {
+            get { return FilterType.Absolute; }
+        }
     }
 }

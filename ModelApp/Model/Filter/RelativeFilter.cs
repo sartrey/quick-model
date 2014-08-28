@@ -7,6 +7,11 @@ namespace QuickModel3D.Model
 {
     public class RelativeFilter : Filter
     {
+        public override FilterType Type
+        {
+            get { return FilterType.Relative; }
+        }
+
         public RelativeFilter() 
         {
         }
