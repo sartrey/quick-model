@@ -9,9 +9,15 @@ namespace QuickModel3D.UI
         private void MnuFilter_Add_Click(object sender, EventArgs e)
         {
             var runtime = Runtime.Instance;
-            var filters = runtime.Project.FilterHub;
-            var filter = new Filter(filters.NewId);
-            filters.LinkFilter(filter);
+            var view = new AddFilterUI();
+            var dlg = new Dialog(view, "添加筛选");
+            dlg.Show();
+            if (!dlg.ValidDialogResult(true))
+                return;
+            var dlg_view = dlg.View as AddFilterUI;
+            dlg.Dispose();
+            //create filter
+            //add filter
         }
 
         private void MnuFilter_Delete_Click(object sender, EventArgs e)
@@ -23,7 +29,7 @@ namespace QuickModel3D.UI
             {
                 var filters = runtime.Project.FilterHub;
                 var filter = filters[(int)node.Tag];
-                filters.KickFilter(filter);
+                filters.RemoveFilter(filter);
             }
         }
     }

@@ -1,5 +1,6 @@
-﻿using QuickModel3D.Model;
-using System;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QuickModel3D.UI
@@ -15,11 +16,9 @@ namespace QuickModel3D.UI
 
         private void MnuModel_Preview_Click(object sender, EventArgs e)
         {
-            var runtime = Runtime.Instance;
-            var window = runtime.WindowHub["preview"];
-            window.Show();
-            var preview = (window as Panel).View as PreviewUI;
-            preview.Preview();
+            string path = Path.Combine(
+                Application.StartupPath, "model", "model.exe");
+            var process = Process.Start(path);
         }
     }
 }

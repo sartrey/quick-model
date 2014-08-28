@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace QuickModel3D.UI
 {
-    public partial class PreviewUI : UserControl
+    public partial class PreviewUI : DialogUI
     {
         public PreviewUI()
         {

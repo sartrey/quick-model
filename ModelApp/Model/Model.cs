@@ -20,7 +20,7 @@ namespace QuickModel3D.Model
             set { _Name = string.IsNullOrWhiteSpace(value) ? null : value; }
         }
 
-        public Project Project 
+        public Project Project
         {
             get { return _Project; }
             set { _Project = value; }
@@ -28,8 +28,14 @@ namespace QuickModel3D.Model
 
         public int LayoutIndex
         {
-            get {return _LayoutIndex;}
-            set{ _LayoutIndex = value;}
+            get { return _LayoutIndex; }
+            set { _LayoutIndex = value; }
+        }
+
+        public int ArrangeIndex
+        {
+            get { return _ArrangeIndex; }
+            set { _ArrangeIndex = value; }
         }
 
         public Entity[] Entities
@@ -39,17 +45,17 @@ namespace QuickModel3D.Model
 
         public Layout Layout
         {
-            get 
+            get
             {
-                if(_LayoutIndex < 0)
+                if (_LayoutIndex < 0)
                     return null;
-                return _Project.LayoutHub[_LayoutIndex]; 
+                return _Project.LayoutHub[_LayoutIndex];
             }
         }
 
-        public int[] Arrange 
+        public int[] Arrange
         {
-            get 
+            get
             {
                 if (_ArrangeIndex < 0)
                     return null;
@@ -57,18 +63,20 @@ namespace QuickModel3D.Model
             }
         }
 
-        public Model() 
+        public Model()
         {
         }
 
-        public XElement ToStructureXML() 
+        public XElement ToStructureXML()
         {
             var xml = new XElement("model",
-                Layout.ToXML());
+                Layout.ToXML(),
+                new XElement("arrange",
+                    string.Join(",", Arrange)));
             return xml;
         }
 
-        public XElement ToFullXML() 
+        public XElement ToFullXML()
         {
             return null;
         }

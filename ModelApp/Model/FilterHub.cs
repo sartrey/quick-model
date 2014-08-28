@@ -14,11 +14,11 @@ namespace QuickModel3D.Model
 
         private event Action<Filter> _FilterAdded;
         private event Action<Filter> _FilterRemoved;
-        private event Action<Filter> _FilterSelected;
+        private event Action<Filter> _FilterUpdated;
 
-        public Filter this[int id] 
+        public Filter this[int id]
         {
-            get 
+            get
             {
                 foreach (var filter in _Filters)
                     if (filter.Id == id)
@@ -27,15 +27,26 @@ namespace QuickModel3D.Model
             }
         }
 
-        public int NewId 
+        public Filter this[string name]
         {
             get 
+            {
+                foreach (var filter in _Filters)
+                    if (filter.Name == name)
+                        return filter;
+                return null;
+            }
+        }
+
+        public int NewId
+        {
+            get
             {
                 var ids = new List<int>();
                 foreach (Filter filter in _Filters)
                     ids.Add(filter.Id);
                 ids.Sort();
-                for (int i = 0; i < ids.Count; i++) 
+                for (int i = 0; i < ids.Count; i++)
                     if (i != ids[i] - 1)
                         return i + 1;
                 return ids.Count + 1;
@@ -47,15 +58,10 @@ namespace QuickModel3D.Model
             get { return _Filters.Count; }
         }
 
-        public Filter CurrentFilter 
+        public Filter CurrentFilter
         {
             get { return _CurrentFilter; }
-            set 
-            {
-                _CurrentFilter = value;
-                if(_FilterSelected != null)
-                    _FilterSelected(value);
-            }
+            set { _CurrentFilter = value; }
         }
 
         public event Action<Filter> FilterAdded 
@@ -70,19 +76,19 @@ namespace QuickModel3D.Model
             remove { _FilterRemoved -= value; }
         }
 
-        public event Action<Filter> FilterSelected
+        public event Action<Filter> FilterUpdated
         {
-            add { _FilterSelected += value; }
-            remove { _FilterSelected -= value; }
+            add { _FilterUpdated += value; }
+            remove { _FilterUpdated -= value; }
         }
 
         public FilterHub() 
         {
         }
 
-        public void LinkFilter(Filter filter) 
+        public void AddFilter(Filter filter) 
         {
-            if (this[filter.Id] == null)
+            if (!_Filters.Contains(filter))
             {
                 _Filters.Add(filter);
                 if (_FilterAdded != null)
@@ -90,14 +96,20 @@ namespace QuickModel3D.Model
             }
         }
 
-        public void KickFilter(Filter filter) 
+        public void RemoveFilter(Filter filter) 
         {
-            if (this[filter.Id] != null)
+            if (_Filters.Contains(filter))
             {
                 _Filters.Remove(filter);
                 if (_FilterRemoved != null)
                     _FilterRemoved(filter);
             }
+        }
+
+        public void UpdateFilter(Filter filter)
+        {
+            if (_FilterUpdated != null)
+                _FilterUpdated(filter);
         }
     }
 }

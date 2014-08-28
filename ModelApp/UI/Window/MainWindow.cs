@@ -25,7 +25,7 @@ namespace QuickModel3D.UI
         {
             var runtime = Runtime.Instance;
             runtime.WindowHub["assets"].Show();
-            runtime.WindowHub["preview"].Show();
+            //runtime.WindowHub["preview"].Show();
             //runtime.WindowHub["draw"].Show();
             Width = 800;
             Height = 600;

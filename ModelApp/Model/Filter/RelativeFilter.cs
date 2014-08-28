@@ -7,8 +7,13 @@ namespace QuickModel3D.Model
 {
     public class RelativeFilter : Filter
     {
-        public RelativeFilter(int id) : base(id) 
+        public RelativeFilter() 
         {
+        }
+
+        public override int DoWith(Project project)
+        {
+            throw new NotImplementedException();
         }
     }
 }

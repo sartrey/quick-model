@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Filter\ExtremeFilter.cs" />
     <Compile Include="Model\Layout.cs" />
     <Compile Include="Model\LayoutHub.cs" />
     <Compile Include="Model\ModelHub.cs" />
@@ -93,16 +94,22 @@
     <Compile Include="UI\View\DrawUI.Designer.cs">
       <DependentUpon>DrawUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\Property\EntityUI.cs">
+    <Compile Include="UI\View\Project\AddFilterUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\View\Property\EntityUI.Designer.cs">
+    <Compile Include="UI\View\Project\AddFilterUI.Designer.cs">
+      <DependentUpon>AddFilterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\Project\EntityUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\Project\EntityUI.Designer.cs">
       <DependentUpon>EntityUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\Property\FilterUI.cs">
+    <Compile Include="UI\View\Project\FilterUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\View\Property\FilterUI.Designer.cs">
+    <Compile Include="UI\View\Project\FilterUI.Designer.cs">
       <DependentUpon>FilterUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\View\StructureUI.cs">
@@ -157,8 +164,14 @@
     <EmbeddedResource Include="UI\View\DrawUI.resx">
       <DependentUpon>DrawUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\View\Property\EntityUI.resx">
+    <EmbeddedResource Include="UI\View\Project\AddFilterUI.resx">
+      <DependentUpon>AddFilterUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Project\EntityUI.resx">
       <DependentUpon>EntityUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\Project\FilterUI.resx">
+      <DependentUpon>FilterUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\View\StructureUI.resx">
       <DependentUpon>StructureUI.cs</DependentUpon>
@@ -195,7 +208,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\View\Property\Filter\" />
+    <Folder Include="UI\View\Project\Filter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

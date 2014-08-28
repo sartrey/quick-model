@@ -12,8 +12,7 @@ namespace QuickModel3D.UI
             {
                 if (LsvLayout.SelectedItems.Count != 1)
                     return -1;
-                var lvi = LsvLayout.SelectedItems[0];
-                var index = (int)lvi.Tag;
+                var index = LsvLayout.SelectedIndices[0];
                 return index;
             }
         }
@@ -24,8 +23,7 @@ namespace QuickModel3D.UI
             { 
                 if (LsvArrange.SelectedItems.Count != 1)
                     return -1;
-                var lvi = LsvArrange.SelectedItems[0];
-                var index = (int)lvi.Tag;
+                var index = LsvArrange.SelectedIndices[0];
                 return index;
             }
         }
@@ -109,7 +107,7 @@ namespace QuickModel3D.UI
             var model = new Model.Model();
             model.Project = Runtime.Instance.Project;
             model.LayoutIndex = layout;
-            //
+            model.ArrangeIndex = arrange;
             var xml = model.ToStructureXML();
             xml.Save(Path.Combine(Runtime.Instance.UnityDataPath, "model.xml"));
             MessageBox.Show("结构文件已经生成，请在预览窗口刷新场景。");

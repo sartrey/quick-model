@@ -5,18 +5,29 @@ using System.Text;
 
 namespace QuickModel3D.Model
 {
-    public class Filter
+    public abstract class Filter
     {
-        protected int _Id;
+        protected int _Id
+            = -1;
+        protected string _Name 
+            = null;
 
-        public int Id 
+        public Filter()
+        {
+        }
+        
+        public int Id
         {
             get { return _Id; }
+            set { _Id = value; }
         }
 
-        public Filter(int id) 
+        public string Name 
         {
-            _Id = id;
+            get { return _Name; }
+            set { _Name = value; }
         }
+
+        public abstract int DoWith(Project project);
     }
 }

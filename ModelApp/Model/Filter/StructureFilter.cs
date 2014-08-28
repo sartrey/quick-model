@@ -5,10 +5,15 @@ using System.Text;
 
 namespace QuickModel3D.Model
 {
-    public class TranslateFilter : Filter
+    public class StructureFilter : Filter
     {
-        public TranslateFilter(int id) : base(id) 
+        public StructureFilter()
         {
+        }
+
+        public override int DoWith(Project project)
+        {
+            throw new NotImplementedException();
         }
     }
 }
