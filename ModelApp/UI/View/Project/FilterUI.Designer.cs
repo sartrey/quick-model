@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.Grp1 = new System.Windows.Forms.GroupBox();
+            this.TxtType = new System.Windows.Forms.Label();
             this.TbxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.LblId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TxtId = new System.Windows.Forms.Label();
             this.Grp2 = new System.Windows.Forms.GroupBox();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnOK = new System.Windows.Forms.Button();
@@ -41,16 +41,25 @@
             // 
             // Grp1
             // 
-            this.Grp1.Controls.Add(this.label1);
+            this.Grp1.Controls.Add(this.TxtType);
             this.Grp1.Controls.Add(this.TbxName);
             this.Grp1.Controls.Add(this.label2);
-            this.Grp1.Controls.Add(this.LblId);
+            this.Grp1.Controls.Add(this.TxtId);
             this.Grp1.Location = new System.Drawing.Point(15, 15);
             this.Grp1.Name = "Grp1";
             this.Grp1.Size = new System.Drawing.Size(290, 115);
             this.Grp1.TabIndex = 8;
             this.Grp1.TabStop = false;
             this.Grp1.Text = "基本信息";
+            // 
+            // TxtType
+            // 
+            this.TxtType.AutoSize = true;
+            this.TxtType.Location = new System.Drawing.Point(20, 56);
+            this.TxtType.Name = "TxtType";
+            this.TxtType.Size = new System.Drawing.Size(41, 12);
+            this.TxtType.TabIndex = 6;
+            this.TxtType.Text = "类型：";
             // 
             // TbxName
             // 
@@ -68,23 +77,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "名称";
             // 
-            // LblId
+            // TxtId
             // 
-            this.LblId.AutoSize = true;
-            this.LblId.Location = new System.Drawing.Point(20, 30);
-            this.LblId.Name = "LblId";
-            this.LblId.Size = new System.Drawing.Size(41, 12);
-            this.LblId.TabIndex = 3;
-            this.LblId.Text = "标识：";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "类型：";
+            this.TxtId.AutoSize = true;
+            this.TxtId.Location = new System.Drawing.Point(20, 30);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(41, 12);
+            this.TxtId.TabIndex = 3;
+            this.TxtId.Text = "标识：";
             // 
             // Grp2
             // 
@@ -103,6 +103,7 @@
             this.BtnCancel.TabIndex = 13;
             this.BtnCancel.Text = "取消";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // BtnOK
             // 
@@ -112,6 +113,7 @@
             this.BtnOK.TabIndex = 12;
             this.BtnOK.Text = "确认";
             this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // FilterUI
             // 
@@ -134,8 +136,8 @@
         private System.Windows.Forms.GroupBox Grp1;
         private System.Windows.Forms.TextBox TbxName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label LblId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TxtId;
+        private System.Windows.Forms.Label TxtType;
         private System.Windows.Forms.GroupBox Grp2;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnOK;
