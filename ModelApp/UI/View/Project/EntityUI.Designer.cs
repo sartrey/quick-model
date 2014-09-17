@@ -32,9 +32,6 @@
             this.TbxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LblId = new System.Windows.Forms.Label();
-            this.Grp2 = new System.Windows.Forms.GroupBox();
-            this.CobxGeometry = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Grp3 = new System.Windows.Forms.GroupBox();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnDraw = new System.Windows.Forms.Button();
@@ -43,7 +40,6 @@
             this.BtnOK = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.Grp1.SuspendLayout();
-            this.Grp2.SuspendLayout();
             this.Grp3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicTexture)).BeginInit();
             this.SuspendLayout();
@@ -85,41 +81,13 @@
             this.LblId.TabIndex = 3;
             this.LblId.Text = "标识：";
             // 
-            // Grp2
-            // 
-            this.Grp2.Controls.Add(this.CobxGeometry);
-            this.Grp2.Controls.Add(this.label3);
-            this.Grp2.Location = new System.Drawing.Point(15, 115);
-            this.Grp2.Name = "Grp2";
-            this.Grp2.Size = new System.Drawing.Size(290, 64);
-            this.Grp2.TabIndex = 8;
-            this.Grp2.TabStop = false;
-            this.Grp2.Text = "几何模型";
-            // 
-            // CobxGeometry
-            // 
-            this.CobxGeometry.FormattingEnabled = true;
-            this.CobxGeometry.Location = new System.Drawing.Point(67, 26);
-            this.CobxGeometry.Name = "CobxGeometry";
-            this.CobxGeometry.Size = new System.Drawing.Size(207, 20);
-            this.CobxGeometry.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "几何体";
-            // 
             // Grp3
             // 
             this.Grp3.Controls.Add(this.BtnClear);
             this.Grp3.Controls.Add(this.BtnDraw);
             this.Grp3.Controls.Add(this.BtnImport);
             this.Grp3.Controls.Add(this.PicTexture);
-            this.Grp3.Location = new System.Drawing.Point(15, 190);
+            this.Grp3.Location = new System.Drawing.Point(15, 111);
             this.Grp3.Name = "Grp3";
             this.Grp3.Size = new System.Drawing.Size(290, 160);
             this.Grp3.TabIndex = 9;
@@ -168,7 +136,7 @@
             // 
             // BtnOK
             // 
-            this.BtnOK.Location = new System.Drawing.Point(139, 360);
+            this.BtnOK.Location = new System.Drawing.Point(139, 281);
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.Size = new System.Drawing.Size(80, 30);
             this.BtnOK.TabIndex = 10;
@@ -178,7 +146,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(225, 360);
+            this.BtnCancel.Location = new System.Drawing.Point(225, 281);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(80, 30);
             this.BtnCancel.TabIndex = 11;
@@ -193,15 +161,12 @@
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.Grp3);
-            this.Controls.Add(this.Grp2);
             this.Controls.Add(this.Grp1);
             this.Name = "EntityUI";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(320, 400);
+            this.Size = new System.Drawing.Size(320, 325);
             this.Grp1.ResumeLayout(false);
             this.Grp1.PerformLayout();
-            this.Grp2.ResumeLayout(false);
-            this.Grp2.PerformLayout();
             this.Grp3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicTexture)).EndInit();
             this.ResumeLayout(false);
@@ -214,9 +179,6 @@
         private System.Windows.Forms.TextBox TbxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblId;
-        private System.Windows.Forms.GroupBox Grp2;
-        private System.Windows.Forms.ComboBox CobxGeometry;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox Grp3;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button BtnDraw;

@@ -9,10 +9,10 @@ namespace QuickModel3D.Model
             = new EntityHub();
         private FilterHub _FilterHub
             = new FilterHub();
-        private LayoutHub _LayoutHub
-            = new LayoutHub();
-        private List<int[]> _Arranges
-            = new List<int[]>();
+        private List<Layout> _Layouts
+            = new List<Layout>();
+        private List<Arrange> _Arranges
+            = new List<Arrange>();
         private string _EngineVersion
             = null;
 
@@ -26,12 +26,12 @@ namespace QuickModel3D.Model
             get { return _FilterHub; }
         }
 
-        public LayoutHub LayoutHub
+        public List<Layout> Layouts
         {
-            get { return _LayoutHub; }
+            get { return _Layouts; }
         }
 
-        public List<int[]> Arranges
+        public List<Arrange> Arranges
         {
             get { return _Arranges; }
         }

@@ -39,14 +39,15 @@
             this.MnuOptions = new System.Windows.Forms.ToolStripDropDownButton();
             this.BtnUseFileAsMem = new System.Windows.Forms.ToolStripMenuItem();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
-            this.MnuSave = new System.Windows.Forms.ToolStripDropDownButton();
-            this.BtnSaveStructure = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtnSaveModel = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.LsvArrange = new System.Windows.Forms.ListView();
+            this.ColhArrangeId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColhArrange = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LsvLayout = new System.Windows.Forms.ListView();
+            this.ColhLayoutId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColhLayout = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MnuSaveStructure = new System.Windows.Forms.ToolStripButton();
+            this.BtnSelect = new System.Windows.Forms.ToolStripButton();
             this.statusbar.SuspendLayout();
             this.toolbar.SuspendLayout();
             this.Panel1.SuspendLayout();
@@ -95,7 +96,8 @@
             this.BtnFilter,
             this.MnuOptions,
             this.split1,
-            this.MnuSave});
+            this.MnuSaveStructure,
+            this.BtnSelect});
             this.toolbar.Location = new System.Drawing.Point(0, 0);
             this.toolbar.Name = "toolbar";
             this.toolbar.Size = new System.Drawing.Size(640, 25);
@@ -117,6 +119,7 @@
             this.BtnFilter.Name = "BtnFilter";
             this.BtnFilter.Size = new System.Drawing.Size(76, 22);
             this.BtnFilter.Text = "筛选结构";
+            this.BtnFilter.Click += new System.EventHandler(this.BtnFilter_Click);
             // 
             // MnuOptions
             // 
@@ -139,31 +142,6 @@
             this.split1.Name = "split1";
             this.split1.Size = new System.Drawing.Size(6, 25);
             // 
-            // MnuSave
-            // 
-            this.MnuSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnSaveStructure,
-            this.BtnSaveModel});
-            this.MnuSave.Image = ((System.Drawing.Image)(resources.GetObject("MnuSave.Image")));
-            this.MnuSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.MnuSave.Name = "MnuSave";
-            this.MnuSave.Size = new System.Drawing.Size(61, 22);
-            this.MnuSave.Text = "保存";
-            // 
-            // BtnSaveStructure
-            // 
-            this.BtnSaveStructure.Name = "BtnSaveStructure";
-            this.BtnSaveStructure.Size = new System.Drawing.Size(156, 22);
-            this.BtnSaveStructure.Text = "保存为结构(&S)";
-            this.BtnSaveStructure.Click += new System.EventHandler(this.BtnSaveStructure_Click);
-            // 
-            // BtnSaveModel
-            // 
-            this.BtnSaveModel.Name = "BtnSaveModel";
-            this.BtnSaveModel.Size = new System.Drawing.Size(156, 22);
-            this.BtnSaveModel.Text = "保存为模型(&M)";
-            this.BtnSaveModel.Click += new System.EventHandler(this.BtnSaveModel_Click);
-            // 
             // Panel1
             // 
             this.Panel1.Controls.Add(this.LsvArrange);
@@ -177,26 +155,34 @@
             // LsvArrange
             // 
             this.LsvArrange.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColhArrangeId,
             this.ColhArrange});
             this.LsvArrange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LsvArrange.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LsvArrange.FullRowSelect = true;
             this.LsvArrange.GridLines = true;
             this.LsvArrange.Location = new System.Drawing.Point(320, 0);
+            this.LsvArrange.MultiSelect = false;
             this.LsvArrange.Name = "LsvArrange";
             this.LsvArrange.Size = new System.Drawing.Size(320, 429);
             this.LsvArrange.TabIndex = 14;
             this.LsvArrange.UseCompatibleStateImageBehavior = false;
             this.LsvArrange.View = System.Windows.Forms.View.Details;
             // 
+            // ColhArrangeId
+            // 
+            this.ColhArrangeId.Text = "索引";
+            this.ColhArrangeId.Width = 45;
+            // 
             // ColhArrange
             // 
             this.ColhArrange.Text = "排列";
-            this.ColhArrange.Width = 320;
+            this.ColhArrange.Width = 275;
             // 
             // LsvLayout
             // 
             this.LsvLayout.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColhLayoutId,
             this.ColhLayout});
             this.LsvLayout.Dock = System.Windows.Forms.DockStyle.Left;
             this.LsvLayout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -204,16 +190,41 @@
             this.LsvLayout.GridLines = true;
             this.LsvLayout.HideSelection = false;
             this.LsvLayout.Location = new System.Drawing.Point(0, 0);
+            this.LsvLayout.MultiSelect = false;
             this.LsvLayout.Name = "LsvLayout";
             this.LsvLayout.Size = new System.Drawing.Size(320, 429);
             this.LsvLayout.TabIndex = 13;
             this.LsvLayout.UseCompatibleStateImageBehavior = false;
             this.LsvLayout.View = System.Windows.Forms.View.Details;
+            this.LsvLayout.SelectedIndexChanged += new System.EventHandler(this.LsvLayout_SelectedIndexChanged);
+            // 
+            // ColhLayoutId
+            // 
+            this.ColhLayoutId.Text = "索引";
+            this.ColhLayoutId.Width = 45;
             // 
             // ColhLayout
             // 
             this.ColhLayout.Text = "布局";
-            this.ColhLayout.Width = 320;
+            this.ColhLayout.Width = 275;
+            // 
+            // MnuSaveStructure
+            // 
+            this.MnuSaveStructure.Image = ((System.Drawing.Image)(resources.GetObject("MnuSaveStructure.Image")));
+            this.MnuSaveStructure.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MnuSaveStructure.Name = "MnuSaveStructure";
+            this.MnuSaveStructure.Size = new System.Drawing.Size(76, 22);
+            this.MnuSaveStructure.Text = "保存结构";
+            this.MnuSaveStructure.Click += new System.EventHandler(this.BtnSaveStructure_Click);
+            // 
+            // BtnSelect
+            // 
+            this.BtnSelect.Image = ((System.Drawing.Image)(resources.GetObject("BtnSelect.Image")));
+            this.BtnSelect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSelect.Name = "BtnSelect";
+            this.BtnSelect.Size = new System.Drawing.Size(76, 22);
+            this.BtnSelect.Text = "选定结构";
+            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // StructureUI
             // 
@@ -243,9 +254,6 @@
         private System.Windows.Forms.ColumnHeader ColhLayout;
         private System.Windows.Forms.ToolStripButton BtnGenerate;
         private System.Windows.Forms.ToolStripButton BtnFilter;
-        private System.Windows.Forms.ToolStripDropDownButton MnuSave;
-        private System.Windows.Forms.ToolStripMenuItem BtnSaveStructure;
-        private System.Windows.Forms.ToolStripMenuItem BtnSaveModel;
         private System.Windows.Forms.ToolStripSeparator split1;
         private System.Windows.Forms.ToolStripDropDownButton MnuOptions;
         private System.Windows.Forms.ToolStripMenuItem BtnUseFileAsMem;
@@ -254,5 +262,9 @@
         private System.Windows.Forms.ToolStripStatusLabel TxtStatLayout;
         private System.Windows.Forms.ToolStripProgressBar Progress;
         private System.Windows.Forms.ToolStripStatusLabel TxtStatArrange;
+        private System.Windows.Forms.ColumnHeader ColhArrangeId;
+        private System.Windows.Forms.ColumnHeader ColhLayoutId;
+        private System.Windows.Forms.ToolStripButton MnuSaveStructure;
+        private System.Windows.Forms.ToolStripButton BtnSelect;
     }
 }

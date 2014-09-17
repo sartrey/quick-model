@@ -44,6 +44,6 @@ namespace QuickModel3D.Model
 
         public abstract FilterType Type { get; }
 
-        public abstract int DoWith(Project project);
+        public abstract void DoWith(Project project);
     }
 }

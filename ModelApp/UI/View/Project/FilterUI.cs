@@ -55,6 +55,9 @@ namespace QuickModel3D.UI
             var ctrl = Grp2.Controls[0];
             if (_Filter.Type == FilterType.Extreme)
             {
+                var ui = ctrl as Filter.ExtremeUI;
+                if (!ui.ValidFilter())
+                    return;
             }
             else if (_Filter.Type == FilterType.Relative)
             {

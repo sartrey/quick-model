@@ -25,7 +25,58 @@ namespace QuickModel3D.Model
             set { _Z = value; }
         }
 
+        public int this[int dim] 
+        {
+            get {
+                return (dim == 0 ? _X :
+                    (dim == 1 ? _Y : 
+                    (dim == 2 ? _Z : -1)));
+            }
+        }
+
         public Point(int x, int y, int z) 
+        {
+            _X = x;
+            _Y = y;
+            _Z = z;
+        }
+    }
+
+    public class PointF
+    {
+        private float _X = 0;
+        private float _Y = 0;
+        private float _Z = 0;
+
+        public float X
+        {
+            get { return _X; }
+            set { _X = value; }
+        }
+
+        public float Y
+        {
+            get { return _Y; }
+            set { _Y = value; }
+        }
+
+        public float Z
+        {
+            get { return _Z; }
+            set { _Z = value; }
+        }
+
+        public float this[int dim]
+        {
+            get
+            {
+                return (dim == 0 ? _X :
+                    (dim == 1 ? _Y :
+                    (dim == 2 ? _Z : -1)));
+            }
+        }
+
+        public PointF(float x, float y, float z)
         {
             _X = x;
             _Y = y;

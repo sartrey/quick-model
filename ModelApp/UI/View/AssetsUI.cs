@@ -109,7 +109,7 @@ namespace QuickModel3D.UI
             var node = new TreeNode();
             node.Text = 
                 string.IsNullOrWhiteSpace(entity.Name) ? 
-                "（未命名）" : 
+                "（模块" + entity.Id + "）" : 
                 entity.Name;
             node.Tag = entity.Id;
             EntityNode.Nodes.Add(node);
@@ -128,7 +128,7 @@ namespace QuickModel3D.UI
             var node = GetEntityNodeById(entity.Id);
             node.Text =
                 string.IsNullOrWhiteSpace(entity.Name) ?
-                "（未命名）" :
+                "（模块" + entity.Id + "）" :
                 entity.Name;
         }
 
@@ -137,7 +137,7 @@ namespace QuickModel3D.UI
             var node = new TreeNode();
             node.Text =
                 string.IsNullOrWhiteSpace(filter.Name) ?
-                "（" + Model.Filter.GetTypeName(filter.Type) + " - 未命名）" :
+                "（" + Model.Filter.GetTypeName(filter.Type) + " - " + filter.Id + "）" :
                 filter.Name;
             node.Tag = filter.Id;
             FilterNode.Nodes.Add(node);
@@ -154,7 +154,7 @@ namespace QuickModel3D.UI
             var node = GetFilterNodeById(filter.Id);
             node.Text =
                 string.IsNullOrWhiteSpace(filter.Name) ?
-                "（" + Model.Filter.GetTypeName(filter.Type) + " - 未命名）" :
+                "（" + Model.Filter.GetTypeName(filter.Type) + " - " + filter.Id + "）" :
                 filter.Name;
         }
 

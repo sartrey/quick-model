@@ -34,12 +34,13 @@
             this.CobxEntity = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ChbxOnlyOne = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ChbxIsAnchor
             // 
             this.ChbxIsAnchor.AutoSize = true;
-            this.ChbxIsAnchor.Location = new System.Drawing.Point(51, 67);
+            this.ChbxIsAnchor.Location = new System.Drawing.Point(51, 87);
             this.ChbxIsAnchor.Name = "ChbxIsAnchor";
             this.ChbxIsAnchor.Size = new System.Drawing.Size(156, 16);
             this.ChbxIsAnchor.TabIndex = 9;
@@ -86,17 +87,27 @@
             // ChbxOnlyOne
             // 
             this.ChbxOnlyOne.AutoSize = true;
-            this.ChbxOnlyOne.Location = new System.Drawing.Point(51, 89);
+            this.ChbxOnlyOne.Location = new System.Drawing.Point(51, 109);
             this.ChbxOnlyOne.Name = "ChbxOnlyOne";
             this.ChbxOnlyOne.Size = new System.Drawing.Size(96, 16);
             this.ChbxOnlyOne.TabIndex = 10;
             this.ChbxOnlyOne.Text = "极限位置排他";
             this.ChbxOnlyOne.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(49, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 12);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "*极限位置服从笛卡尔右手直角坐标系。";
+            // 
             // ExtremeUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ChbxOnlyOne);
             this.Controls.Add(this.ChbxIsAnchor);
             this.Controls.Add(this.CobxExtreme);
@@ -104,7 +115,7 @@
             this.Controls.Add(this.CobxEntity);
             this.Controls.Add(this.label1);
             this.Name = "ExtremeUI";
-            this.Size = new System.Drawing.Size(290, 115);
+            this.Size = new System.Drawing.Size(290, 135);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +129,6 @@
         private System.Windows.Forms.ComboBox CobxEntity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ChbxOnlyOne;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -64,6 +64,11 @@ namespace QuickModel3D.Model
             set { _CurrentFilter = value; }
         }
 
+        public List<Filter> Filters
+        {
+            get { return _Filters; }
+        }
+
         public event Action<Filter> FilterAdded 
         {
             add { _FilterAdded += value; }

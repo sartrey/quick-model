@@ -13,6 +13,8 @@ namespace QuickModel3D.Model
             = -1;
         private int _ArrangeIndex
             = -1;
+        private List<Shape> _Shapes
+            = new List<Shape>();
 
         public string Name
         {
@@ -49,11 +51,11 @@ namespace QuickModel3D.Model
             {
                 if (_LayoutIndex < 0)
                     return null;
-                return _Project.LayoutHub[_LayoutIndex];
+                return _Project.Layouts[_LayoutIndex];
             }
         }
 
-        public int[] Arrange
+        public Arrange Arrange
         {
             get
             {
@@ -63,22 +65,45 @@ namespace QuickModel3D.Model
             }
         }
 
+        public List<Shape> Shapes 
+        {
+            get { return _Shapes; }
+        }
+
         public Model()
         {
         }
 
         public XElement ToStructureXML()
         {
+            var xml_layout = Layout.ToXML();
+            xml_layout.Add(
+                new XAttribute("index", _LayoutIndex + 1));
+            var xml_arrange = Arrange.ToXML();
+            xml_arrange.Add(
+                new XAttribute("index", _ArrangeIndex + 1));
             var xml = new XElement("model",
-                Layout.ToXML(),
-                new XElement("arrange",
-                    string.Join(",", Arrange)));
+                xml_layout,
+                xml_arrange);
             return xml;
         }
 
         public XElement ToFullXML()
         {
-            return null;
+            var xml_layout = Layout.ToXML();
+            xml_layout.Add(
+                new XAttribute("index", _LayoutIndex + 1));
+            var xml_arrange = Arrange.ToXML();
+            xml_arrange.Add(
+                new XAttribute("index", _ArrangeIndex + 1));
+            var xml_shape = new XElement("shapes");
+            foreach (var shape in _Shapes)
+                xml_shape.Add(shape.ToXML());
+            var xml = new XElement("model",
+                xml_layout,
+                xml_arrange,
+                xml_shape);
+            return xml;
         }
     }
 }

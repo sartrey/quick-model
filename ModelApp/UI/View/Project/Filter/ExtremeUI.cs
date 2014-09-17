@@ -10,7 +10,8 @@ namespace QuickModel3D.UI.Filter
             = null;
         private string[] _Extremes
             = new string[] {
-                "最上", "最下", "最左", "最右", "最前", "最后"
+                "最前（X+）", "最后（X-）", "最右（Y+）", 
+                "最左（Y-）", "最上（Z+）", "最下（Z-）"
             };
 
         private Entity[] Entities
@@ -105,6 +106,8 @@ namespace QuickModel3D.UI.Filter
         private void ChbxIsAnchor_CheckedChanged(object sender, EventArgs e)
         {
             ChbxOnlyOne.Enabled = ChbxIsAnchor.Checked;
+            if (!ChbxIsAnchor.Checked)
+                ChbxOnlyOne.Checked = false;
         }
     }
 }

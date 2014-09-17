@@ -55,6 +55,11 @@ namespace QuickModel3D.Model
             set { _CurrentEntity = value; }
         }
 
+        public List<Entity> Entities
+        {
+            get { return _Entities; }
+        }
+
         public Entity[] EntityArray 
         {
             get

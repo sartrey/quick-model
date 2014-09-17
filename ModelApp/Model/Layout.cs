@@ -16,6 +16,11 @@ namespace QuickModel3D.Model
             set { _Points = value; }
         }
 
+        public List<int> InvalidArranges
+        {
+            get { return _InvalidArranges; }
+        }
+
         public XElement ToXML() 
         {
             var xml_layout = new XElement("layout");

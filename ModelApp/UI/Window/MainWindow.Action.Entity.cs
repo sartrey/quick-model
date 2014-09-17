@@ -53,6 +53,7 @@ namespace QuickModel3D.UI
             var entity = entities.CurrentEntity;
             if (entity == null)
                 return;
+
             var property = new EntityUI();
             property.Entity = entity;
 

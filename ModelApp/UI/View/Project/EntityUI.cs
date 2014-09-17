@@ -7,8 +7,6 @@ namespace QuickModel3D.UI
     {
         private Entity _Entity
             = null;
-        private string[] _Shapes
-            = new string[] { "立方体", "球体" };
 
         public Entity Entity
         {
@@ -23,18 +21,6 @@ namespace QuickModel3D.UI
         public EntityUI()
         {
             InitializeComponent();
-            CobxGeometry.Items.Clear();
-            foreach (var shape in _Shapes)
-                CobxGeometry.Items.Add(shape);
-        }
-
-        private int GetShapeIndex(ShapeType shape) 
-        {
-            if (shape == ShapeType.Cube)
-                return 0;
-            if (shape == ShapeType.Sphere)
-                return 1;
-            return -1;
         }
 
         public void UpdateEntity() 
@@ -43,8 +29,6 @@ namespace QuickModel3D.UI
                 return;
             LblId.Text = "索引：" + _Entity.Id.ToString();
             TbxName.Text = _Entity.Name;
-            int shape_index = GetShapeIndex(_Entity.Shape.Type);
-            CobxGeometry.SelectedIndex = shape_index;
             PicTexture.Image = _Entity.Texture;
         }
 
@@ -73,7 +57,6 @@ namespace QuickModel3D.UI
 
         private void BtnImport_Click(object sender, System.EventArgs e)
         {
-
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)

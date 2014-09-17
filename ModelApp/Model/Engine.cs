@@ -31,8 +31,8 @@ namespace QuickModel3D.Model
 
         public void GenerateLayout()
         {
-            var layouts = Project.LayoutHub;
-            layouts.RemoveAllLayouts();
+            var layouts = Project.Layouts;
+            layouts.Clear();
             int count = Project.EntityHub.Count;
             var stack = new Stack<PointIterator>();
             var points = new List<PointIterator>();
@@ -44,7 +44,7 @@ namespace QuickModel3D.Model
                 if (points.Count == count)
                 {
                     var layout = CreateLayout(points);
-                    layouts.AddLayout(layout);
+                    layouts.Add(layout);
                     points.Remove(point);
                     stack.Pop();
                     if (stack.Count == 0)
@@ -98,9 +98,9 @@ namespace QuickModel3D.Model
             return false;
         }
 
-        private int[] CreateArrange(List<int> iters)
+        private Arrange CreateArrange(List<int> iters)
         {
-            var arrange = new int[iters.Count];
+            var arrange = new Arrange(iters.Count);
             var entities = Project.EntityHub.EntityArray;
             for (int i = 0; i < iters.Count; i++)
                 arrange[i] = entities[iters[i]].Id;
@@ -120,6 +120,13 @@ namespace QuickModel3D.Model
                 var arrange = CreateArrange(iters);
                 arranges.Add(arrange);
             } while (NextArrange(iters));
+        }
+
+        public void DoWithFilter()
+        {
+            var filters = Project.FilterHub.Filters;
+            foreach (var filter in filters)
+                filter.DoWith(Project);
         }
     }
 }

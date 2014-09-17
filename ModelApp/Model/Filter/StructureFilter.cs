@@ -16,7 +16,7 @@ namespace QuickModel3D.Model
         {
         }
 
-        public override int DoWith(Project project)
+        public override void DoWith(Project project)
         {
             throw new NotImplementedException();
         }

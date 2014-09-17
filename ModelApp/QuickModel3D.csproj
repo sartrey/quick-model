@@ -45,9 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Arrange.cs" />
     <Compile Include="Model\Filter\ExtremeFilter.cs" />
     <Compile Include="Model\Layout.cs" />
-    <Compile Include="Model\LayoutHub.cs" />
     <Compile Include="Model\ModelHub.cs" />
     <Compile Include="Model\FilterHub.cs" />
     <Compile Include="Model\EntityHub.cs" />
@@ -124,6 +124,12 @@
     <Compile Include="UI\View\Project\Filter\RelativeUI.Designer.cs">
       <DependentUpon>RelativeUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\View\ShapeUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\View\ShapeUI.Designer.cs">
+      <DependentUpon>ShapeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\View\StructureUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\View\Project\Filter\RelativeUI.resx">
       <DependentUpon>RelativeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\View\ShapeUI.resx">
+      <DependentUpon>ShapeUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\View\StructureUI.resx">
       <DependentUpon>StructureUI.cs</DependentUpon>
