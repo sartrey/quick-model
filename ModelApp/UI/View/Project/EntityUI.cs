@@ -1,4 +1,5 @@
 ﻿using QuickModel3D.Model;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuickModel3D.UI
@@ -35,7 +36,6 @@ namespace QuickModel3D.UI
         private void BtnOK_Click(object sender, System.EventArgs e)
         {
             _Entity.Name = TbxName.Text;
-            //shape
             //do NOT update texture
             FinishDialog(true);
         }
@@ -57,10 +57,37 @@ namespace QuickModel3D.UI
 
         private void BtnImport_Click(object sender, System.EventArgs e)
         {
+            var dlg = new OpenFileDialog();
+            dlg.Filter = "图片文件|*.png;*.jpg;*.bmp";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            var image = Image.FromFile(dlg.FileName);
+            if (image.Width != 500 || image.Height != 500)
+                image = GetResizeImage(image);
+            if (_Entity.Texture != null)
+                _Entity.Texture.Dispose();
+            _Entity.Texture = image;
+            PicTexture.Image = image;
         }
 
         private void BtnClear_Click(object sender, System.EventArgs e)
         {
+            if (_Entity.Texture != null)
+            {
+                _Entity.Texture.Dispose();
+                _Entity.Texture = null;
+            }
+        }
+
+        private Image GetResizeImage(Image source) 
+        {
+            var bitmap = new Bitmap(500, 500);
+            var graphics = Graphics.FromImage(bitmap);
+            graphics.CompositingQuality = 
+                System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            graphics.DrawImage(source, 0, 0, 500, 500);
+            source.Dispose();
+            return bitmap;
         }
     }
 }

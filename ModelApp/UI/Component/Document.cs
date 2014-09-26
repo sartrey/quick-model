@@ -45,7 +45,8 @@ namespace QuickModel3D.UI
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            View.Dispose();
+            if(View != null)
+                View.Dispose();
             base.OnFormClosing(e);
         }
 

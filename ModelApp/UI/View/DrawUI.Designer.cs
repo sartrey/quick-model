@@ -39,9 +39,10 @@
             this.split2 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnBackColor = new System.Windows.Forms.ToolStripButton();
             this.BtnForeColor = new System.Windows.Forms.ToolStripButton();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.split3 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnSave = new System.Windows.Forms.ToolStripButton();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.BtnReset = new System.Windows.Forms.ToolStripButton();
             this.Toolbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.BtnBackColor,
             this.BtnForeColor,
             this.split3,
+            this.BtnReset,
             this.BtnSave});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
@@ -132,15 +134,6 @@
             this.BtnForeColor.Text = "前景色";
             this.BtnForeColor.Click += new System.EventHandler(this.BtnForeColor_Click);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.AutoScroll = true;
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 25);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(600, 375);
-            this.MainPanel.TabIndex = 3;
-            // 
             // split3
             // 
             this.split3.Name = "split3";
@@ -154,6 +147,24 @@
             this.BtnSave.Size = new System.Drawing.Size(52, 22);
             this.BtnSave.Text = "保存";
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(0, 25);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(600, 375);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.Image = ((System.Drawing.Image)(resources.GetObject("BtnReset.Image")));
+            this.BtnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(52, 22);
+            this.BtnReset.Text = "重绘";
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // DrawUI
             // 
@@ -186,6 +197,7 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.ToolStripSeparator split3;
         private System.Windows.Forms.ToolStripButton BtnSave;
+        private System.Windows.Forms.ToolStripButton BtnReset;
 
     }
 }

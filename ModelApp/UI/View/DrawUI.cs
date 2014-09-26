@@ -147,5 +147,14 @@ namespace QuickModel3D.UI
             Entity.Texture = Canvas.RenderFrame;
             MessageBox.Show("已将当前贴图缓存在内存。");
         }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            Canvas.Reset();
+            SetColor(Color.White, true);
+            SetColor(Color.Black, false);
+            Canvas.BackColor = Color.White;
+            Canvas.ForeColor = Color.Black;
+        }
     }
 }

@@ -109,8 +109,7 @@ namespace QuickModel3D
                 if (_BackColor == value)
                     return;
                 _BackColor = value;
-                //_BrushCaches[2] = new SolidBrush(Color.FromArgb(128, value));
-                _BrushCaches[2] = new SolidBrush(Color.Transparent);
+                _BrushCaches[2] = new SolidBrush(Color.FromArgb(128, value));
                 Invalidate();
             }
         }
@@ -140,8 +139,7 @@ namespace QuickModel3D
         {
             _BrushCaches = new Brush[5];
             _BrushCaches[1] = new SolidBrush(Color.Black); //fore
-            //_BrushCaches[2] = new SolidBrush(Color.FromArgb(128, Color.White)); //eraser
-            _BrushCaches[2] = new SolidBrush(Color.Transparent); //eraser
+            _BrushCaches[2] = new SolidBrush(Color.FromArgb(128, Color.White)); //eraser
 
             _PenCaches = new Pen[5];
             _PenCaches[0] = new Pen(Color.Gray, 2); //outline
@@ -173,6 +171,21 @@ namespace QuickModel3D
             base.Dispose();
         }
 
+        public void Reset() 
+        {
+            if (_CurrentFrame != null)
+            {
+                _CurrentFrame.Dispose();
+                _CurrentFrame = null;
+            }
+            if (_BackupFrame != null)
+            {
+                _BackupFrame.Dispose();
+                _BackupFrame = null;
+            }
+            Refresh();
+        }
+
         protected void DrawPoint(Point location)
         {
             var g = Graphics.FromImage(CurrentFrame);
@@ -184,7 +197,7 @@ namespace QuickModel3D
         {
             var g = Graphics.FromImage(CurrentFrame);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.FillEllipse(_BrushCaches[2], location.X, location.Y, 2 * _BrushSize + 1, 2 * _BrushSize + 1);
+            g.FillEllipse(_BrushCaches[2], location.X, location.Y, 3 * _BrushSize + 1, 3 * _BrushSize + 1);
         }
 
         protected void DrawLine(int state, Point location) 

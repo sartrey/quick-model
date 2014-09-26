@@ -7,6 +7,8 @@ namespace QuickModel3D.UI
 {
     public partial class ShapeUI : DialogUI
     {
+        private string _ExternalPath 
+            = null;
         private Model.Model _Model 
             = null;
         private string[] _ShapeNames
@@ -78,6 +80,40 @@ namespace QuickModel3D.UI
             TbxRZ.Text = shape.Rotate.Z.ToString();
         }
 
+        private bool SaveModel(string path) 
+        {
+            try
+            {
+                var files = Directory.GetFiles(path);
+                if (files.Length > 0)
+                {
+                    var result = MessageBox.Show(
+                        "目标目录已有文件，是否清理?", "注意",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        foreach (var file in files)
+                            File.Delete(file);
+                    }
+                }
+                var xml = _Model.ToFullXML();
+                xml.Save(
+                    Path.Combine(path, "fullmodel.xml"));
+                for (int i = 0; i < _Model.Entities.Length; i++)
+                {
+                    var entity = _Model.Entities[i];
+                    if (entity.Texture != null)
+                        entity.Texture.Save(
+                            Path.Combine(Runtime.Instance.UnityDataPath, "entity" + i + ".png"));
+                }
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+
         private void BtnApply_Click(object sender, EventArgs e)
         {
             if (CobxEntity.SelectedItem == null)
@@ -99,20 +135,30 @@ namespace QuickModel3D.UI
         private void BtnSaveModel_Click(object sender, EventArgs e)
         {
             var path = Runtime.Instance.UnityDataPath;
-            var xml = _Model.ToFullXML();
-            xml.Save(
-                Path.Combine(path, "fullmodel.xml"));
-            var tex_files = Directory.GetFiles(path, "entity*.png");
-            foreach (var file in tex_files)
-                File.Delete(file);
-            for (int i = 0; i < _Model.Entities.Length; i++)
+            if (SaveModel(path))
+                MessageBox.Show("成功输出模型文件到预览缓存，请在预览窗口刷新场景。");
+            else
+                MessageBox.Show("保存失败。");
+            var result = MessageBox.Show(
+                "是否保存模型到非缓存区?", "提示",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                var entity = _Model.Entities[i];
-                if (entity.Texture != null)
-                    entity.Texture.Save(
-                        Path.Combine(Runtime.Instance.UnityDataPath, "entity" + i + ".png"));
+                if (_ExternalPath == null)
+                {
+                    var dlg = new FolderBrowserDialog();
+                    if (dlg.ShowDialog() != DialogResult.OK)
+                        return;
+                    path = dlg.SelectedPath;
+                    _ExternalPath = path;
+                }
+                else 
+                    path = _ExternalPath;
+                if (SaveModel(path))
+                    MessageBox.Show("成功输出模型文件到：\n" + path);
+                else
+                    MessageBox.Show("保存失败。");
             }
-            MessageBox.Show("成功输出模型文件，请在预览窗口刷新场景。");
         }
     }
 }
